@@ -42,7 +42,7 @@ body {
 // center.cgi
 
 #leftFrame {
-	@include set_size(180px,100%);
+	@include set_size(181px,100%);
 	@include float(left);
 	@set_color($left-menu-font,#fff);
 	@media(max-width:768px){
@@ -58,3 +58,4 @@ body {
          width:100%!important;
     }
 }
+

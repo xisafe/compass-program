@@ -9,6 +9,7 @@
 	@include set_size(100%,auto);
     margin: 0px auto;
     border :2px solid #e2e2e2;
+    background-color:#fefefe;
     .container-main-body{
     	@include set_size(100%,auto);
     }
@@ -173,4 +174,19 @@ button {
     @include hover();
     @include set_color(#231915,inherit);
     border:none;
+}
+.background-hovered{
+    background-color: powderblue!important;
+}
+.background-checked{
+    background-color: antiquewhite!important;
+}
+
+.control_stretch_table {
+    display: inline-block;
+    height: 25px;
+    float: right;
+    cursor: col-resize;
+    border: 1px solid rgba(0,0,0,0);
+    box-sizing: border-box;
 }

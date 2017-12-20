@@ -29,10 +29,14 @@ a.logo{
 	@include other-sprite("logo");
 	@include unstyled-link();
 	@include hover();
-	padding-left:47px;
+	height:36px;
+	padding:{
+		top:10px;
+		left:52px;
+	}
 	margin:{
 		left:12px;
-		top:14px;
+		top:7px;
 	}
 	#CH_logo_title{
 		font:{
@@ -49,6 +53,9 @@ a.logo{
 		@include inline-block();
 		@include other-sprite("warnning_lamp");
 		margin-top:8px;
+	}
+	img{
+		@include hover();
 	}
 }
 
@@ -74,5 +81,13 @@ a.logo{
 				}
 			}
 		}
+	}
+}
+
+.font-awesome-circle{
+	font-size:15px!important;
+	.font-awesome-inner{
+		color:$top-bg-color;
+		font-size:18px!important;
 	}
 }

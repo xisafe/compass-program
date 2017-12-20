@@ -36,9 +36,9 @@
 
 #menu-content{
 	dl{
+		
 		dd{
 			ul{
-				
 				@include set_size();
 				@include no-bullet();
 				li{
@@ -56,7 +56,7 @@
 					    font-size: 14px;
 					}
 				}
-				li.selected{
+				.selected{
 					a{
 						color:#fff;
 					}
@@ -76,7 +76,7 @@
 				@include inline-block();
 				@include set_size();
 			}
-			&:hover{
+			&.sele_fir_menu,&:hover{
 				@include set_color(#fff,$left-menu-hover);
 				border-color:$left-menu-blue;
 				font-weight:normal;

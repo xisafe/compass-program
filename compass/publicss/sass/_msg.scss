@@ -45,8 +45,9 @@
 
 .popup-short-mesg-box-body {
 	@include stretch($offset-top: 44%,$offset-left: 50%);
-	@include transform(translate(-50%, -50%));
     @include set_size(240px,150px);
+    margin-left:-120px;
+    margin-top:-75px;
     background-color: #FFFFFF;
     border: none;
     text-align: center;
