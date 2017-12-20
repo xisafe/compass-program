@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.service {
+    float: left;
+    width: 30%;
+}
+.input-textarea {
+    height: 60px;
+}

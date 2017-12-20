@@ -1,0 +1,198 @@
+.dialog__overlay {
+	position: fixed;
+	z-index: 50;
+	background: #000;
+	opacity: 0;
+	filter: Alpha(Opacity=30);
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.4s;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.4s;
+	-webkit-backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.open-dialog__overlay {
+	display: block;
+	position: fixed;
+	z-index: 50;
+	background: #000;
+	opacity: 0.5;
+	filter: Alpha(Opacity=30);
+	-webkit-transition: opacity 0.3s;
+	transition: opacity 0.4s;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.4s;
+	-webkit-backface-visibility: hidden;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: auto;
+}
+
+.close--eidt_passwd_bbb {
+
+top: 260px;
+margin: 0px auto;
+position: relative;
+border: 8px solid #666;
+border-color: rgba(0, 0, 0, 0.1);
+width: 500px;
+height: 206px;
+box-shadow: 0 5px 15px rgba(0,0,0,.5);
+-webkit-background-clip: padding-box;
+background-color: rgb(255, 255, 255);
+
+}
+.close_TransparentBorder_s {
+
+    position: absolute;
+    width: 40%;
+    border: 8px solid rgba(102, 102, 102, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 5px 15px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+
+}
+.close_TransparentBorder_m {
+
+    position: absolute;
+    width: 50%;
+    border: 8px solid rgba(102, 102, 102, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 5px 15px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+
+}
+.close_TransparentBorder_m {
+
+    position: absolute;
+    width: 80%;
+    border: 8px solid rgba(102, 102, 102, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 5px 15px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+
+}
+
+.open--eidt_passwd_bbb {
+
+top: 260px;
+margin: 0px auto;
+position: relative;
+border: 8px solid #666;
+border-color: rgba(0, 0, 0, 0.1);
+width: 500px;
+height: 206px;
+box-shadow: 0 5px 15px rgba(0,0,0,.5);
+-webkit-background-clip: padding-box;
+background-color: rgb(255, 255, 255);
+z-index: 1000;
+
+}
+.open_TransparentBorder_s {
+
+    position: absolute;
+    width: 40%;
+    border: 8px solid rgba(102, 102, 102, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 5px 15px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    z-index: 100;
+
+}
+.open_TransparentBorder_m {
+
+    position: absolute;
+    width: 50%;
+    border: 8px solid rgba(102, 102, 102, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 5px 15px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    z-index: 100;
+
+}
+.open_TransparentBorder_l {
+
+    position: absolute;
+    width: 80%;
+    border: 8px solid rgba(102, 102, 102, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.498039) 0px 5px 15px;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    z-index: 100;
+
+}
+
+.close--eidt_passwd_bbb {
+	-webkit-animation-name: anim-close;
+	animation-name: anim-close;
+}
+.close_TransparentBorder_s,
+.close_TransparentBorder_m,
+.close_TransparentBorder_l
+ {
+	-webkit-animation-name: anim-close;
+	animation-name: anim-close;
+}
+
+@-webkit-keyframes anim-close {
+	0% { opacity: 1; }
+	100% { opacity: 0; -webkit-transform: scale3d(0.5, 0.5, 1); }
+}
+
+@keyframes anim-close {
+	0% { opacity: 1; }
+	100% { opacity: 0; -webkit-transform: scale3d(0.5, 0.5, 1); transform: scale3d(0.5, 0.5, 1); }
+}
+
+.open--eidt_passwd_bbb {
+	-webkit-animation-name: anim-open;
+	animation-name: anim-open;
+	-webkit-animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+	animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+}
+.open_TransparentBorder_s,
+.open_TransparentBorder_m,
+.open_TransparentBorder_l
+ {
+	-webkit-animation-name: anim-open;
+	animation-name: anim-open;
+	-webkit-animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+	animation-timing-function: cubic-bezier(0.6,0,0.4,1);
+}
+
+@-webkit-keyframes anim-open {
+	0% { opacity: 0; -webkit-transform: scale3d(0, 0, 1); }
+	100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); }
+}
+
+@keyframes anim-open {
+	0% { opacity: 0; -webkit-transform: scale3d(0, 0, 1); transform: scale3d(0, 0, 1); }
+	100% { opacity: 1; -webkit-transform: scale3d(1, 1, 1); transform: scale3d(1, 1, 1); }
+}
+
+.open--eidt_passwd_bbb,
+.close--eidt_passwd_bbb {
+	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+.open_TransparentBorder_s,
+.close_TransparentBorder_s,
+.open_TransparentBorder_m,
+.close_TransparentBorder_m,
+.open_TransparentBorder_l,
+.close_TransparentBorder_l
+ {
+	-webkit-animation-duration: 0.4s;
+	animation-duration: 0.4s;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}

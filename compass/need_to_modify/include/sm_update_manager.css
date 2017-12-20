@@ -1,0 +1,94 @@
+#list_panel_id_for_list_panel .toolbar{border: none;}
+#list_panel_id_for_list_panel .toolbar span{margin: 0;}
+#add-div-content table{height: 36px;}
+
+.importlog-left{line-height: 40px;}
+.chioce-right{line-height: 37px;height: 41px;}
+
+.file{top: 6px;left: 50px;}
+
+.chioce-right label {
+    margin-left: 75px;
+    font-weight: normal;
+    top: -3px;
+    position: relative;
+}
+
+.chioce-right select {
+    position: relative;
+    top: 7px;
+    width: 120px;
+    height: 26px;
+    left: 50px;
+    border-radius: 4px;
+}
+
+.chioce-right select:hover{
+	cursor: pointer;
+}
+
+.chioce-right select option{
+	height: 26px;
+}
+.mesg-border-box-s tr.add-panel-odd-line td.add-panel-subtitle, .mesg-border-box-s tr.add-panel-even-line td.add-panel-subtitle {
+    width: 29%;
+}
+.add-panel-odd-line {
+    height: 50px;
+}
+
+input:disabled {
+    background: none; 
+}
+input:disabled:hover { 
+    cursor: no-drop;
+}
+
+.add-panel-footer{
+    position: relative;
+}
+
+#add_panel_cancel_button_id_for_add_panel{
+    position: absolute;
+    left: 53%;
+}
+
+#update{
+    position: absolute;
+    left: 29%;
+    background-image: url(../images/button.jpg);
+    background-repeat: repeat-x;
+    border:0;
+}
+
+#add_panel .popup-mesg-box-body{
+    margin-left: -22%;
+}
+
+.list{border: none; }
+#file_lib{margin-left:6px;}
+
+#list_panel_id_for_log_detail_panel .toolbar .paging-tools img{
+ margin-right: 0px;
+    margin: 5px 3px;
+
+}
+#list_panel_id_for_log_detail_panel .toolbar .paging-tools .paging-text{
+    width: 125px;
+}
+
+.upspring{
+-webkit-animation:bounce 1s .2s infinite;
+-moz-animation:bounce 1s .2s infinite;
+animation-iteration-count:5;
+-webkit-animation-iteration-count:5; }
+@-webkit-keyframes bounce{
+0%,20%,50%,80%,100%{-webkit-transform:translateY(0)}
+40%{-webkit-transform:translateY(-6px)}
+60%{-webkit-transform:translateY(-3px)}
+}
+@-moz-keyframes bounce{
+0%,20%,50%,80%,100%{-moz-transform:translateY(0)}
+40%{-moz-transform:translateY(-6px)}
+60%{-moz-transform:translateY(-3px)}
+}

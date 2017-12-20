@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+
+.time_input {
+    width: 150px;
+}
+.my_search_button {
+    min-width: 60px;
+    width: 60px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+/*#statistical_pattern {
+    width: 120px;
+    height: 60px;
+}*/

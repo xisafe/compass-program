@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* CSS Document */
+
+.textAreaDivParent {
+	position:relative;
+}
+.displayPro:hover+div.textAreaDiv {
+	display: block;
+}
+.textAreaDiv {
+	display:none;
+	min-height:200px;
+	width:130px;
+	padding-top:10px;
+	padding-left:10px;
+	background-color:#e6eff8;
+	position:absolute;
+	left:220px;
+	top:-150px;
+	border: 1px solid #e6eff8;
+	border-radius: 10px;
+	
+	
+}
+.textAreaDiv .divArrow {
+	display:inline-block;
+	width: 0;
+	height:0;
+	border-width:10px 5px 10px 0;
+	border-color:transparent #e6eff8;
+	border-style:solid;
+	position:absolute;
+	left:-5px;
+	top:150px;
+}
+.add-panel-postfix-label {
+	display: inline-block;
+	min-width: 46px;
+}
+label[for="ip"],label[for="user"] {
+	width: 45px;
+}
+.user_icon{
+	background: url(../images/user.png);background-repeat: no-repeat;
+    background-position: 2px 4px;
+    width: 17px;
+}
+.mesg-border-box-m tr.add-panel-odd-line td.add-panel-subtitle, .mesg-border-box-m tr.add-panel-even-line td.add-panel-subtitle {
+    width: 24%;
+}
+.action-image{
+	margin-left: 3px;
+	margin-right: 3px;
+}

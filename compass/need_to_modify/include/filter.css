@@ -1,0 +1,19 @@
+div span{
+    padding: 1px;
+    margin: 1px;
+}
+
+div input{
+    padding:1px;
+    margin:5px;
+}
+
+div input span{
+    padding:0;
+    margin:0;
+}
+
+.customize_tip{
+    padding:1px;
+    margin:5px;
+}

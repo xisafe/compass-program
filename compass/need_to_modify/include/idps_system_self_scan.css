@@ -1,0 +1,103 @@
+.containter-div-header-tip {
+    display: none;
+}
+.scanning {
+    width: 100%;
+    padding: 0px;
+    border: none;
+}
+.scanning-header {
+    width: 100%;
+    height: 100px;
+    border-bottom: solid 1px #AAA;
+    background-color: #E5F0FA;
+}
+.scanning-header-left, .scanning-header-right {
+    margin: 0px;
+    padding: 0px;
+    width: 100px;
+    height: 100px;
+    background-color: inherit;
+    border: none;
+    display: inline;
+}
+.scanning-header-left img {
+    width: 100px;
+    height: 100px;
+}
+.scanning-header-left-text {
+    margin: 0px;
+    padding: 40px 5px;
+    width: 90px;
+    height: 20px;
+    background-color: inherit;
+    background-image: url(../images/waiting_abort.png);
+    border: none;
+    float: left;
+    text-align: center;
+    border-radius: 10px;
+    color: #285372;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 20px;
+    font-family: "微软雅黑" Serif;
+    z-index: 7;
+}
+.scanning-header-middle {
+    height: 25px;
+    width: 80%;
+    float: left;
+    padding: 38px 10px;
+
+}
+.progress-bar {
+    height: 23px;
+    border: solid 1px #B3E2F4;
+}
+.finished, .unfinished {
+    height: 23px;
+}
+.finished {
+    float: left;
+    width: 0%;
+    background-color: #557D99;
+}
+.unfinished {
+    float: right;
+    width: 100%;
+}
+.scanning-header-right {
+    float: right;
+}
+.scanning-header-right-button {
+    margin: 12px auto;
+}
+.scanning-body {
+    min-height: 300px;
+    background-color: inherit;
+}
+.scanning-result {
+    border: none;
+}
+.scanning-result tr {
+    line-height: 35px;
+    border-bottom: solid 1px #AAA;
+}
+.scanning-result tr.last_line {
+    border-bottom: none;
+}
+.scanning-result td {
+    text-indent:  5px;
+    border: none;
+}
+.scanning-result td:first-child {
+    text-indent:  100px;
+    font-weight: bold;
+}
+.icon-column {
+    text-align: center;
+}
+.error-text {
+    font-weight: bold;
+    color: red;
+}

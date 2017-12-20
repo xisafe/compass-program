@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+.checkbox_group_class {
+    width: 40%;
+}
+
+.v-center {
+    height: 120px;
+    line-height: 120px;
+    overflow: hidden;
+}

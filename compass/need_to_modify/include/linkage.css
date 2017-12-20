@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+label {
+    margin-left: 5px;
+    margin-right: 20px;
+}
+.congif-box {
+    width: 96%;
+    margin: 20px auto;
+    border: 1px solid #DDD;
+    height: auto;
+}
+.tr-head {
+    background-image: url(../images/con-header-bg.jpg);
+    line-height: 25px;
+    height: 25px;
+    color: #192027;
+    font-weight: bold;
+    text-align: center;
+}
+.close {
+    color: red;
+}
+.open {
+    color: green;
+}

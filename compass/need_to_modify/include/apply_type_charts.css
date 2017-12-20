@@ -1,0 +1,18 @@
+.map_title,.map_condition{
+    min-height: 20px;
+    line-height: 20px;
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid #607896;
+}
+.map_condition select{
+	margin: 0 15px;
+}
+#apply_flow_chart,#net_flow_chart{
+ 	width:95%;
+	height: 330px;
+	margin:20px auto;
+	border:1px solid grey;
+	position:relative;
+	border-radius:10px;
+}

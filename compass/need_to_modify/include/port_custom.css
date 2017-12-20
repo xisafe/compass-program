@@ -1,0 +1,14 @@
+.fd{ width:100%; height:auto; position:absolute; top:150px; left:0px; z-index:1; display:none;}
+.fd_box{ width:320px; height:auto; margin:0px auto; position:relative; }
+.tm_box{ width:300px; height:272px; padding:10px; background-color:rgba(7, 96, 177, 0.97); 
+-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; FILTER: alpha(opacity=50); 
+opacity: 0.5; -moz-opacity: 0.5; position:absolute; top:0px; left:0px; z-index:2;}
+.denglu_box{ width:280px; height:250px; padding:10px; background-color:#E5F0FA; -
+webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; position:absolute; 
+top:10px; left:10px; z-index:3; font-family:"ËÎÌו";}
+.denglu_box h1{ width:270px; height:30px; line-height:30px; font-size:14px; margin:0px; 
+padding:0px 5px; font-weight:100; color:#666666; border-bottom:1px solid #009999;}
+.denglu_box span{ color:#666666; display:block; margin:10px 0px; padding:0px 5px;}
+.guanbi{ width:14px; height:13px; 
+background-repeat:no-repeat; position:absolute; top:25px; right:25px; z-index:4; cursor: 
+pointer;}

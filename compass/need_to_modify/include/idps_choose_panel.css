@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+.wl_choosePanel {
+    margin: 5px;
+    height: 180px;
+    width: 750px;
+}
+.wl_choosePanel_leftDiv {
+    float: left;
+}
+.wl_choosePanel_middleDiv {
+    float: left;
+    margin: 50px 30px;
+}
+.wl_choosePanel_rightDiv {
+    float: left;
+}
+.wl_choosePanel_select {
+    width: 200px;
+}
+.wl_choosePanel_tips {
+    margin:5px auto;
+}
+.wl_choosePanel_optDiv {
+    margin: 10px;
+}
+.wl_choosePanel_optButton {
+    padding: 2px 5px;
+}

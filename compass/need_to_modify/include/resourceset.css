@@ -1,0 +1,36 @@
+.appendimage{
+	margin-left:10px;
+}
+.multi_line{
+	height:25px;
+	padding:0px;
+	margin-top:5px;
+}
+
+#add-div-resg{
+width:96%;
+margin:20px auto;
+border:1px solid #DDD;
+height:auto;
+}
+
+#add-div-header-resg {
+width:100%;
+padding-top:2px;
+height:25px;
+line-height:25px;
+background-image:url(../images/con-header-bg.jpg);
+border-bottom:1px solid #999;
+font-size:13px;
+color:#192027;
+font-weight:bold;
+cursor:pointer;
+}
+
+#add-div-content-resg {
+width:100%;
+}
+
+#add-div-content-resg  table{
+width:100%;
+}

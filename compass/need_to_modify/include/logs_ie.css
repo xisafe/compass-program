@@ -1,0 +1,38 @@
+.header_red, .header_ipsec, .header_dhcpd, .header_dnsmasq, .header_backup, .header_smtp, .header_system, .header_dansguardian, .header_squid, .header_snort, .header_firewall, .header_clamav, .header_openvpn, .header_httpd {
+ width: 70px;
+ float: left;
+ margin: 0;
+ font-weight: bold;
+ padding: 2px;
+ border: 0;
+}
+
+.date_red, .date_ipsec, .date_dhcpd, .date_dnsmasq, .date_backup, .date_smtp, .date_system, .date_dansguardian, .date_squid, .date_snort, .date_firewall, .date_clamav, .date_openvpn, .date_httpd {
+ float: left;
+ width: 130px;
+ padding: 2px;
+ border: 0;
+}
+
+.text_red, .text_ipsec, .text_dhcpd, .text_dnsmasq, .text_backup, .text_smtp, .text_system, .text_dansguardian, .text_squid, .text_snort, .text_firewall, .text_clamav, .text_openvpn, .text_httpd {
+ float: left;
+ margin-left: 0px;
+ padding: 2px;
+ border: 0;
+}
+
+.log_maindiv {
+ padding: 0px;
+ margin: 0px;
+ spacing: 0px;
+ margin-right: 0px;
+}
+
+.ie_clearer {
+ clear: both;
+ float:none;
+ height:0;
+ padding:0;
+ font-size: 2px;
+ line-height:0;
+}

@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hirel_title{
+	margin:5px 0;
+	border-bottom:1px solid #dedcdc;
+	font-size:14px;
+	}
+.hirel_border{
+	border:1px solid #dedcdc;
+	margin:15px 0px 15px 17px;
+	width:97%;
+	padding-bottom:5px;
+	}	
+.hirel_table{
+	margin:5px 0;
+	font-size:12px;
+	margin-left:20px;
+	width:97%;
+	}
+.hirel_td{
+	padding:3px 0px;
+	margin:3px 0px;
+	}
+.hirel_td_last{
+	padding:5px 0px;
+	margin:5px 0px;
+	text-align:center;
+	}	
+#green_alt{
+	display:none;
+	margin-left:5px;
+	}
+#orange_alt{
+	display:none;
+	margin-left:5px;
+	}		

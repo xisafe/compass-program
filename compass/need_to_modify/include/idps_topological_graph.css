@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+.containter-div {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: solid 1px #AAA;
+    border-right: solid 1px #AAA;
+}
+.containter-div-header-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 5px;
+    line-height: 35px;
+    border-top: solid 1px #AAA;
+    border-bottom: solid 1px #AAA;
+    background-color: #D5E2F2;
+}
+.containter-div-content {
+    text-align: center;
+}

@@ -1,0 +1,101 @@
+#panel_user_group {
+	width: 208px;
+	height: 609px; 
+	float: left; 
+	background-color: #e6eff8;
+	border: 1px solid #d8d8d8;
+	border-right: 0;
+	border-top: 0;
+}
+#user_group_title {
+	overflow: hidden;
+	background-color: #D0DFF2;
+	height: 31px;
+	line-height: 31px;
+	border: 1px solid #d8d8d8;
+
+}
+#user_group_title div {
+	display: inline-block;
+	padding-left: 10px;	
+	font-weight:bold;
+	color: #333;
+}
+#user_group {
+	border-top: 1px solid #d8d8d8;
+	color: #333;
+}
+
+#list_panel {
+	margin-left: 208px;
+	width: auto;
+}
+#list_panel_id_for_list_panel .toolbar:nth-child(1) {
+	height: 31px;
+	border-left: 1px solid #d8d8d8;
+}
+#list_panel_id_for_list_panel .toolbar:nth-child(3) {
+	height: 28px;
+}
+#user_group_title .noArrow {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	margin-right: 10px;
+	background-color: transparent;
+}
+
+#cat_tree .user_icon{
+	background: url(../images/login_user.png);background-repeat: no-repeat;
+      background-position: 2px 4px;
+    width: 17px;
+}
+
+.tr_green{
+	background-color:darkseagreen;
+}
+/*span.add-panel-prefix-tip{
+	display: inline-block;
+    width: 140px;
+}*/
+
+#cat_tree_move .user_icon{
+	background: url(../images/login_user.png);background-repeat: no-repeat;
+      background-position: 2px 4px;
+    width: 17px;
+}
+#cat_tree_search{
+width: 90px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    height: 20px;
+    margin-top: 1px;
+    text-indent: 6px;
+        font-size: 12px;
+    outline: medium;
+}
+.mesg-border-box-s tr.add-panel-odd-line td.add-panel-subtitle, .mesg-border-box-s tr.add-panel-even-line td.add-panel-subtitle {
+    width: 28%;
+}	
+.add-panel-footer{
+    position: relative;
+}
+
+#add_panel_cancel_button_id_for_import_panel{
+    position: absolute;
+    right: 24%
+}
+
+#update{
+    position: absolute;
+    left: 24%;
+    background-image: url(../images/button.jpg);
+    background-repeat: repeat-x;
+    border:0;
+}
+
+#add_panel_header_id_for_import_panel form[enctype="multipart/form-data"]{
+	display: inline-block;
+    margin: 3px 5px;
+    float: right;
+}

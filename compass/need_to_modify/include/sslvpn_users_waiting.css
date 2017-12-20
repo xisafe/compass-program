@@ -1,0 +1,22 @@
+#waiting-top
+{
+background: transparent url(/images/waiting-container.png) no-repeat left top;
+height: 138px;
+width: 741px;
+margin-left: 280px;
+margin-top: 200px;
+}
+#waiting{
+	background: transparent url(/images/notification-indicator.gif) no-repeat left center;
+	font-size: 16px;
+	margin-left: 30px;
+	margin-top: 80px;
+	padding: 60px;
+	padding-left: 50px;
+}
+#wait_upload_msg
+{
+	font-size: 1em;
+	display: block;
+	background-color: #fff;
+}

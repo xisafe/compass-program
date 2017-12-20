@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+tr.add-panel-odd-line td.add-panel-subtitle, tr.add-panel-even-line td.add-panel-subtitle{
+    text-indent:15px;
+    border-right:1px solid #999;
+    width:25%;
+    background-color:#e6eff8;
+    font-weight:bold;
+}

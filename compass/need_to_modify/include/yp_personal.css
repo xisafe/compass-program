@@ -1,0 +1,55 @@
+.red {
+	width: 200px;
+	height: 200px;
+	margin: 20px 20px;
+	background-color: red;
+}
+.green {
+	width: 200px;
+	height: 200px;
+	margin: 20px 20px;
+	background-color: green;
+}
+.blue {
+	width: 200px;
+	height: 200px;
+	margin: 20px 20px;
+	background-color: blue;
+}
+
+
+.agreement_button {
+	height: 20px;
+	width:20px;
+}
+.agreement_textarea {
+	height: 100px;
+	width: 350px;
+	
+}
+.rightArrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-right: 10px;
+	border-width: 5px 0 5px 10px;
+	border-color: transparent black;
+	border-style: solid;
+	
+}
+.downArrow {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-right: 10px;
+	border-width: 10px 5px 0 5px;
+	border-color: black transparent;
+	border-style: solid;
+}
+.noArrow {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin-right: 10px;
+	background-color: transparent;
+}

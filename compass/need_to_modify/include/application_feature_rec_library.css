@@ -1,0 +1,89 @@
+﻿#cont_title{
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(142, 191, 242, 0.64);
+    padding-left: 5px;
+}
+#for_content{
+	overflow: hidden;
+}
+#left{
+    width: 208px;
+    float: left;
+}
+#right{
+	margin-left:208px;
+	width:auto;
+}
+#cur_app{
+    height: 25px;
+    line-height: 25px;
+    background-color: #ebf6fc;
+	padding-left:10px;
+	border: 1px solid #D8D8D8;
+	font-weight: bold;
+
+}
+#cont_menu_title{
+	height: 25px;
+	background-color: #ebf6fc;
+	line-height:25px;
+	padding-left:10px;
+	border: 1px solid #D8D8D8;
+	border-right: 0;
+	font-weight: bold;
+}
+#cont_menu_ul{
+	height: 609px;
+	background-color: #E5F0FA;
+	border-left: 1px solid #D8D8D8;
+	border-bottom: 1px solid #D8D8D8;
+	overflow: auto;
+	color:#000;
+}
+li.application_group{
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	
+}
+li.application_group_change{
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	padding-left: 20px;
+	background-color: rgba(142, 191, 242, 0.64);
+}
+.table_list{
+}
+div#table_list div#list_panel_id_for_list_panel div.container-main-body{
+	
+}
+.rule-list {
+	table-layout:fixed;/* 只有定义了表格的布局算法为fixed，下面td的定义才能起作用。 */ 
+}
+.rule-list #rule_listb_for_list_panel  td:nth-child(3){
+	word-break:keep-all;/* 不换行 */ 
+	white-space:nowrap;/* 不换行 */ 
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */ 
+	text-overflow:ellipsis;/* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+	
+}
+#list_panel_id_for_list_panel {
+	width: auto;
+}
+#list_panel_id_for_list_panel .toolbar:nth-child(1) {
+	height: 31px;
+}
+div#table_list div#list_panel_id_for_list_panel div.container-main-body{
+	
+	height: 547px;
+}
+#list_panel_id_for_list_panel .toolbar:nth-child(3) {
+	height: 28px;
+}
+
+#edit_panel .container-main-body.container-main-body-s {
+	height: 287px;
+}

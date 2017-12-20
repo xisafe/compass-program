@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+.agreement_button {
+	height: 20px;
+	width:20px;
+}
+.agreement_textarea {
+	height: 150px;
+	width: 330px;
+	
+}

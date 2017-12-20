@@ -1,0 +1,64 @@
+.tip {
+  background-color: #a0d3e8;
+  padding: 5px 5px;
+  font-size: 14px;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  left: 450px;
+  top: 20px; }
+  .tip b.close {
+    position: absolute;
+    right: 12px;
+    top: 0px;
+    color: red;
+    font-size: 14px;
+    cursor: pointer; }
+  .tip .tip-cont {
+    width: 150px;
+    height: auto;
+    /*overflow: auto;*/
+     }
+    .tip .tip-cont .tip-text {
+      white-space: normal;
+    }
+    .tip .tip-cont .tip-title {
+      padding-bottom: 2px;
+      font-weight: bold;
+      text-align: center; }
+    .tip .tip-cont .tip-button {
+      padding-top: 2px;
+      text-align: center; }
+      .tip .tip-cont .tip-button button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        border-radius: 0;
+        border-style: solid;
+        border-width: 0;
+        cursor: pointer;
+        font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        font-weight: normal;
+        line-height: normal;
+        margin: 2px 5px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        padding: 2px 8px;
+        font-size: 13px;
+        background-color: #008CBA;
+        border-color: #007095;
+        color: #fff;
+        transition: background-color 300ms ease-out; }
+        .tip .tip-cont .tip-button button:hover {
+          background-color: #007095; }
+  .tip b.in {
+    position: absolute;
+    display: block;
+    border: solid #a0d3e8;
+    border-color: #a0d3e8 transparent transparent;
+    border-width: 15px 10px 0px;
+    left: auto;
+    top: auto; }
+
+/*# sourceMappingURL=tips.css.map */

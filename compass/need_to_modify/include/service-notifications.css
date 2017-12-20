@@ -1,0 +1,29 @@
+/* Overlay covering the whole page in white */
+#notification-overlay { 
+	background: transparent url(/images/notification-overlay.png) repeat scroll
+	 			left top;
+	z-index: 4000;
+	position: absolute;
+	top: 0px; 
+	left: 0px;
+	display: none;
+}
+/* The container for the notification messages */
+#notification-container {
+	background: transparent url(/images/notification-container.png) no-repeat
+				left top;
+	height: 86px;
+	width: 516px;
+	position: fixed;
+	z-index: 4001;
+	display: none;
+}
+/* Styling the container the content */
+#notification-container .content {
+	background: transparent url(/images/notification-indicator.gif) no-repeat
+				left center;
+	font-size: 14px;
+	margin-left: 20px;
+	padding: 35px;
+	padding-left: 45px;
+}

@@ -1,0 +1,22 @@
+.odd {
+    line-height: 25px;
+}
+label {
+    margin-left: 5px;
+    margin-right: 15px;
+}
+.single_line {
+    line-height: 25px;
+}
+.connected {
+    color: #80CC37;
+    font-weight: bold;
+}
+.disconnected {
+    color: red;
+    font-weight: bold;
+}
+input[type="checkbox"] {
+    /*width: 11px;
+    height: 11px;*/
+}

@@ -1,0 +1,25 @@
+input[name="killvirusbtn"]{
+	margin: 0px 15px;
+	padding: 0px 5px;
+	background-image: url(../images/button.jpg);
+	background-repeat: repeat-x;
+	min-width: 80px;
+	height: 25px;
+	border: 0px;
+	border-left: 1px solid #b3e2f4;
+	border-right: 1px solid #b3e2f4;
+	cursor: pointer;
+
+}
+
+#setvirus-filetype{
+	height: 20px;
+	vertical-align: top;
+}
+
+#list_panel_id_for_lib_panel .add-panel-footer{
+	width: 100%;
+    vertical-align: middle;
+    background: #A4C2E4;
+        padding-bottom: 2px;
+}

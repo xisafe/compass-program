@@ -1,0 +1,497 @@
+/*table.list {
+    width: 100%;
+    margin: 0;
+    margin-top: 0px;
+    border: 1px solid #bfbfbf;
+    border-top: 0px;
+    padding: 7px;
+}
+*/
+div.error {
+	margin: 0;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-top: 0px;
+	padding: 10px;
+}
+
+img.error {
+        margin-right: 40px;
+}
+
+div.warning {
+	margin: 0;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-top: 0px;
+	padding: 10px;
+}
+
+img.warning {
+        margin-right: 40px;
+}
+
+h3.error {
+	background: url(../images/box-back23.png);
+}
+h3.warning {
+	background: url(../images/box-back23.png);
+}
+h3.note {
+	background: url(../images/box-back23.png);
+}
+
+div.note {
+	margin: 0;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-top: 0px;
+	padding: 10px;
+}
+img.note {
+        margin-right: 40px;
+}
+
+table tr.header {
+	background-image: url(../images/table-header.png);
+	background-repeat: no-repeat;
+	background-color: #e6e6e6;
+}
+
+div.accordion-container tr.header td {
+	font-size: 10px;
+	padding: 0px;
+	margin: 0;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;		
+}
+
+div.accordion-container tr.odd {
+    background: #fafafa;
+	padding: 0;
+	margin: 0;
+}
+
+div.accordion-container tr.even {
+    background: #f0f0f0;
+	margin: 0;
+}
+
+div.accordion-container tr td {
+	padding: 4px 4px 4px 2px;
+	margin: 0;
+}
+
+div.accordion-container td.top-no-padding {
+    padding-top: 0px;
+}
+
+tr.selected {
+    background-color: #ffff00;
+}
+
+#page-content a.info { text-decoration: none; color: #579903; }
+#page-content a.info:hover { text-decoration: none; color: #000000; }
+
+#page-content a {
+    text-decoration: underline;
+    color: #579903;
+}
+
+#page-content a:hover {
+	text-decoration: underline;
+	color: #000000;
+}
+
+.page-content { padding-top: 16px; }
+
+.border-bottom {
+	border-bottom: 1px solid #ccc;
+}
+
+.border-top {
+	border-top: 1px solid #ccc;
+}
+
+.green {
+    color: #339933;
+}
+
+.red {
+    color: #993333;
+}
+
+.orange {
+    color: #FF9933;
+}
+
+.yellow {
+    color: #FFFF00;
+}
+
+.blue {
+    color: #333399;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.cb {
+    clear: both;
+}
+
+.hidden {
+    display: none;
+}
+
+table.ruleslist {
+	width: 96%;
+	margin:0px auto;
+	border: 1px solid #ccc; 
+}
+
+table.ruleslist td, table.ruleslist th {
+	border-bottom: 1px solid #ccc;
+	text-align: left;
+	padding: 4px 4px 4px 2px;
+}
+
+table.ruleslist td.boldbase, table.ruleslist tr th {
+    background-color: #e0e0e0;
+    background-image: url(../images/heading-back.png);
+    background-position: center;
+    border-left: 1px solid #ccc;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 4px;
+}
+
+table.ruleslist td.actions {
+/*将此处的样式注释掉，让其继承父元素的样式，以更改规则列表显示不统一问题 by wl  2013.12.18
+	background: #ffffff;
+	border: none;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+*/	
+}
+
+table.ruleslist td.actions input {
+/*	border: none;*/
+	float: left;
+	padding : 0;
+	margin : 0;
+	padding-left: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+table.ruleslist td.actions a {
+/*	border: none;*/
+	float: left;
+	padding : 0;
+	margin : 0;
+	padding-left: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+
+table.ruleslist tr td {
+    padding-left: 5px;
+}
+
+img.clear {
+/*	border: none;*/
+    float: left;
+	padding : 0;
+	margin : 0;
+	padding-left: 4px;
+	height: 16px;
+	width: 16px;
+}
+
+div.box {
+    padding-bottom: 20px;
+}
+
+div.boxvalue {
+    
+}
+
+div.submit {
+    padding: 0px 0px 0px 0px;
+    text-align: left;
+}
+
+div.boxsubmit {
+    padding: 10px 0px 0px 8px;
+    text-align: left;
+}
+
+div.editortitle {
+    border-bottom: 1px solid #cccccc;
+    padding: 0px 0px 10px 0px;
+    text-align: left;
+}
+
+div.editoradd {
+    text-align: left;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    background: url(/images/editoradd.png) no-repeat;
+    padding-left: 20px;
+    line-height: 16px;
+}
+
+div.editorbox {
+    text-align: left;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #CCCCCC;
+    background-color: #f0f0f0;
+}
+
+div.ediorerror {
+    text-align: left;
+}
+
+div.editorsubmit {
+    padding: 10px 0px 0px 0px;
+    text-align: left;
+}
+
+/* Form layout styles */
+input.checkbox { margin: 0px; padding: 0px; margin-right: 4px; }
+
+.form-field, .multi-form-field { float:left; padding-right: 4px; }
+.form-field input, .form-field select, .multi-form-field input, .multi-form-field select { display: block; margin: 0px; margin-top: 4px; }
+.form-field input, .form-field select { width: 370px; }
+.multi-form-field input, .multi-form-field select { width: 180px; }
+input.checkbox { margin: 0px; margin-top: 4px; padding: 0px; }
+label { font-weight: bold; }
+#network-register td { padding: 4px 4px 4px 0px; }
+td.section-title { padding: 4px 4px 0px 0px; }
+td.title p.form-section-title { font-size: 12px; font-weight: normal; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 4px; }
+.form-section-title.first { padding-top: 0px; }
+label.error-msg { font-weight: normal; padding-top: 3px; color: red; font-size: 10px; display: block; clear: both; }
+/*.divider { border-top: #AAAAAA 1px dotted; margin: 0px; padding: 0px; padding-bottom: 4px; }*/
+.form-field.error, .multi-form-field.error { color: red; }
+
+div.save-button { float: left; width: 680px; margin-top: 3px; border-top: #dddddd 1px solid; padding-top: 6px; padding-right: 24px; padding-bottom: 16px; }
+
+/* Styles for the ajaxed service switch (on/off) */
+.service-switch { padding: 0px; margin: 0px;}
+.service-switch .title { line-height: 17px; font-size: 14px; }
+.service-switch .image { padding-left: 6px; }
+/*.service-switch div.save-button { margin-top: 3px; border-top: #dddddd 1px solid; padding-top: 6px; }*/
+.service-switch .content { }
+.service-switch .content .description { margin-top: 19px; background-color: #eeeeee; border: #dddddd 1px solid; padding: 4px; width: 500px; }
+/* Style the spinner text */
+.service-switch .content .working { margin-top: 18px; }
+/* Spinner layout styles */
+.spinner { 
+    display: none;
+    background: url(/images/indicator.gif) no-repeat 0px 0px;
+    line-height: 16px; 
+    margin: 0px; padding: 0px;
+    padding-left: 24px;
+}
+.service-switch .content .options-container { margin-top: 11px; }
+/*.service-switch .content .options-container div.title { padding: 4px 4px 0px 0px; }*/
+.service-switch .content .options-container div.title { border-bottom: #AAAAAA 1px dotted; margin: 0px; padding: 0px; margin-bottom: 12px; }
+.service-switch .content .options-container div.title h2.title { font-size: 12px; font-weight: normal; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 4px; }
+/*.service-switch .content .options-container div.divider { border-top: #AAAAAA 1px dotted; margin: 0px; padding: 0px; padding-bottom: 0px; }
+*/
+.service-switch .content .options-container div.options { }
+.service-switch .enable-uplinks { padding-top: 10px; }
+.service-switch .enable-uplinks span { padding-right: 10px; }
+/* Vertical-align only applies to checkboxes - needed only for firefox to align label and checkbox */
+.service-switch .enable-uplinks input { padding: 0px; margin: 0px; margin-left: 10px; vertical-align: bottom; margin-right: 4px; }
+.service-switch .enable-uplinks select { margin-left: 4px; }
+
+/* styles for remote.cgi */
+.service-switch-image { padding-left: 6px; }
+.switch-options { margin-top: 0px; }
+
+.switch-info-container { margin-top: ;}
+#ssh-options, #ssh-hold { padding-top: 10px; }
+#ssh-hold { margin-top: 7px; }
+p.form-section-title { font-size: 12px; font-weight: normal; padding: 0px; margin: 0px; padding-bottom: 4px; }
+div.title { padding: 4px 4px 0px 0px; }
+/*.divider { border-top: #AAAAAA 1px dotted; margin: 0px; padding: 0px; padding-bottom: 0px; }
+*/
+#ssh-description { margin-top: 17px; background-color: #eeeeee; border: #dddddd 1px solid; padding: 4px; width: 500px;}
+
+/* Styles for enaccess.cgi */
+/*#access-policy-hold { margin-top: 27px; }
+#access-policy { margin-top: 0px; }
+p.form-section-title { font-size: 12px; font-weight: normal; padding: 0px; margin: 0px; padding-bottom: 4px; }
+div.title { padding: 4px 4px 0px 0px; }
+.divider { border-top: #AAAAAA 1px dotted; margin: 0px; padding: 0px; padding-bottom: 0px; }
+#access-description { }
+.cb-caption { padding-left: 6px; }  
+/*
+
+/* Styles for EFW Forms */
+.efw-form { }
+.efw-form .section { margin-bottom: 0px; }
+.efw-form .section.first { margin-top: 0px; }
+.efw-form .section div.title { border-bottom: #AAAAAA 1px dotted; margin: 0px; padding: 0px; margin-bottom: 12px; }
+.efw-form .section div.title h2.title { font-size: 12px; font-weight: normal; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 4px; }
+
+.accordion-head { background: url(../images/con-header-bg.jpg) repeat; cursor: pointer; margin: 0px; padding: 0px; border-left: 1px solid #DBDBDB; border-right: 1px solid #DBDBDB; }
+.accordion-head img.toggle { float: left; margin: 0px; padding-left: 10px; padding-top: 6px; border: none; }
+.accordion-head h3.title { float: left; background: none; border: none; line-height: 24px; font-size: 10px; padding: 0px; padding-left: 10px; }
+.accordion-container { background: #FFFFFF; border-bottom: #dddddd 1px solid; padding-bottom:8px; padding-left:22px; padding-top:22px; padding-right:22px; border-left: 1px solid #DBDBDB; border-right: 1px solid #DBDBDB;}
+/*.accordion-container .accordion-head,
+.accordion-container table.ruleslist { margin-right: 22px; }*/
+
+.category-head { background: #EFEFDF; line-height: 0px; cursor: pointer; margin: 0px; padding: 0px; width: inherit;}
+.category-head img.toggle { float: left; margin: 0px; padding-left: 10px; padding-top: 6px; border: 0px none; }
+.category-head h3.title { float: left; background: none; border: none; padding-left:10px; line-height: 24px; font-size: 10px; width: 260px;}
+.category-head img.status { float: right; margin: 0px; padding: 4px; border: none; }
+.category-container { background: #FFFFFF; cursor: pointer; margin-bottom: 2px; }
+.category-container .subcategory { background: #FFFFFF; border-left: #dddddd 1px solid; border-right: #dddddd 1px solid; border-bottom: #dddddd 1px solid; }
+.category-container .subcategory a.title { float: left; font-size: 10px; font-weight: normal; margin: 0px; margin-left: 26px; padding-left: 4px; padding-top: 5px; padding-bottom: 4px; }
+.category-container .subcategory img.status { float: right; margin: 0px; padding-left: 4px; padding-right: 4px; padding-top: 4px; padding-bottom: 4px; border: 0px none; }
+
+.efw-form .section .fields-row .multiselect,
+.efw-form .section .fields-row textarea { height: 80px; }
+
+.efw-form .section .fields-row select { height: 20px; }
+
+.efw-form .section .fields-row .field div.category-head { width: 318px; }
+.efw-form .section .fields-row .field .category-head h3.title { width: 260px; }
+
+.efw-form .section .fields-row.field-textarea { padding-bottom: 5px; }
+.efw-form .section .fields-row.field-select { padding-bottom: 6px; }
+.efw-form .section .fields-row.field-checkbox { padding-bottom: 25px; }
+.efw-form .section .fields-row.field-category { padding-bottom: 34px; }
+.efw-form .section .fields-row { padding-bottom: 4px; }
+
+.efw-form .section .fields-row .multi-field input, 
+.efw-form .section .fields-row .multi-field select,
+.efw-form .section .fields-row .zone-field input, 
+.efw-form .section .fields-row .zone-field select,
+.efw-form .section .fields-row .field input, 
+.efw-form .section .fields-row .field select, 
+.efw-form .section .fields-row .field .value, 
+.efw-form .section .fields-row .field textarea { display: block; margin: 0px; margin-top: 4px; }
+
+.efw-form .section .fields-row .field select,
+.efw-form .section .fields-row .field textarea,
+.efw-form .section .fields-row.field-checkbox { width: 316px; }
+.efw-form .section .fields-row .field input,
+.efw-form .section .fields-row.field-empty { width: 310px; }
+
+.efw-form .section .fields-row .multi-field select,
+.efw-form .section .fields-row .multi-field textarea,
+.efw-form .section .fields-row .multi-field.field-checkbox { width: 184px; }
+.efw-form .section .fields-row .multi-field input,
+.efw-form .section .fields-row .multi-field.field-empty { width: 178px; }
+
+.efw-form .section .fields-row .zone-field select,
+.efw-form .section .fields-row .zone-field textarea,
+.efw-form .section .fields-row .zone-field.field-checkbox { width: 208px; }
+.efw-form .section .fields-row .zone-field input,
+.efw-form .section .fields-row .zone-field.field-empty { width: 202px; }
+
+.efw-form .section .fields-row .field.checkbox input,
+.efw-form .section .fields-row .multi-field.checkbox input,
+.efw-form .section .fields-row .zone-field.checkbox input { display: inline; width: inherit; }
+
+.efw-form .section .fields-row .field.checkbox label,
+.efw-form .section .fields-row .multi-field.checkbox label,
+.efw-form .section .fields-row .zone-field.checkbox label { font-weight: normal; padding-left: 4px; }
+
+.efw-form .field.checkbox input,
+.efw-form .multi-field.checkbox input, 
+.efw-form .zone-field.checkbox input { margin: 0px; padding: 0px; }
+
+.efw-form .section .field.submit input, 
+.efw-form .section .multi-field.submit input, 
+.efw-form .section .zone-field.submit input { width: inherit; }
+/* Styles for multi column form sections, meaning that more than one column is next to the other */
+.efw-form .section.multi-column { float: left; padding-right: 20px; }
+.editorcontainer .efw-form .section.multi-column { float: left; padding-right: 18px; }
+/*.form-field, .multi-form-field { float:left; padding-right: 4px; }
+.form-field input, .form-field select, .multi-form-field input, .multi-form-field select { display: block; margin: 0px; margin-top: 4px; }
+.form-field input, .form-field select { width: 370px; }
+.multi-form-field input, .multi-form-field select { width: 180px; }
+*/
+/* If the form is used within an editorbox the padding around the
+ * title is removed
+ */
+ 
+.editorbox .efw-form .section div.title h2.title {
+    padding-top: 0px;
+}
+
+/* Legend to a list should show a space of 6px to the list above */
+.list-legend{
+width:96%;
+margin:0px auto;
+}
+
+.list-legend tr{
+background-color:#ebf6fc;
+line-height:25px;
+height:25px;
+}
+
+
+.list-legend tr td{
+text-indent:20px;
+}
+
+.list-legend tr td img{
+margin:0px 5px -3px 5px;
+}
+
+
+.inline {
+    display: inline;
+}
+table.ruleslist tr td.center, table.ruleslist tr th.center {
+    text-align: center;
+}
+
+.important { 
+    background: url(/images/bubble.png) transparent no-repeat;
+    padding: 10px;
+    height: 93px;
+    width: 486px;
+}
+
+.important .content {
+    color: #ffffff;
+    font-size: 13px;
+    margin-top: 9px;
+    padding-left: 100px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+.error-fancy .content, .notification-fancy .content { color: #ffffff; text-align: left; background: url(/images/bubble_red_content.png) no-repeat; width: 468px; padding-top: 19px; padding-bottom: 14px; padding-left: 18px; padding-right: 18px; }
+.error-fancy .content .sign { }
+.error-fancy .content .text, .notification-fancy .content .text { padding-left: 30px; line-height: 15px; font-size: 12px; }
+.error-fancy .bottom, .notification-fancy .bottom { background: url(/images/bubble_red_bottom.png) no-repeat; height: 20px; width: 504px; }
+.error-fancy, .notification-fancy { width: 504px; margin-left: 120px; }
+.notification-fancy .content { background: url(/images/bubble_yellow_content.png); }
+.notification-fancy .bottom { background: url(/images/bubble_yellow_bottom.png); }
+.notification { 
+    background: url(/images/bubble_yellow.png) transparent no-repeat;
+    padding: 10px;
+    height: 93px;
+    width: 486px;
+}
+
+.notification .content {
+    color: #999;
+    font-size: 13px;
+    margin-top: 9px;
+    padding-left: 80px;
+    padding-right: 10px;
+    text-align: left;
+}

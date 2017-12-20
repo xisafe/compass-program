@@ -1,0 +1,30 @@
+.left_text_label {
+    margin-right: 5px;
+}
+.right_text_label {
+    margin-left: 5px;
+}
+.radio_input {
+    vertical-align:middle;
+}
+.label_for_radio {
+    margin: auto 5px;
+}
+.inline_div {
+    display: inline;
+}
+.single_line {
+    display: block;
+    margin: 5px;
+}
+#policy_text, #policy_choice {
+    float: left;
+}
+.exclusive{
+    color: #FF0000;
+    font-weight: bold;
+}
+.alert_tip {
+    color: #FF0000;
+    font-weight: bold;
+}

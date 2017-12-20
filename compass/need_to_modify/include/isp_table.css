@@ -1,0 +1,54 @@
+/* 消息盒子的样式 */
+.all-mesg-box {
+    text-align: center;
+}
+.mesg-box {
+    margin: 10px auto;
+    padding: 10px;
+    width: 30%;
+    background-color: #FFF;
+    text-align: center;
+    display: none;
+    border-radius: 10px;
+}
+.mesg-box img  {
+    width: 32px;
+    height: 32px;
+    margin-bottom: -11px;
+}
+.mesg-box-main {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.mesg-box-foot {
+    width: 100%;
+    margin-top: 15px;
+}
+.tips-mesg-box {
+    width: 30%;
+    /*padding: 5px 5px 10px 5px;
+    margin: 5px auto;
+    position: fixed;
+    left: 35%;
+    top: 45%;*/
+    border-radius: 6px;
+    background-color: #F5FAFC;
+}
+.note-mesg-box {
+    border: 3px solid #FCB214;
+}
+.warn-mesg-box {
+    border: 3px solid #E0BB4C;
+}
+
+.error-mesg-box {
+    border: 3px solid #FF4949;
+}
+.apply-mesg-box {
+    border:3px solid #91b940;
+}
+.mesg-body {
+    color: #666768;
+    font-weight: bold;
+    font-size: 14px;
+}

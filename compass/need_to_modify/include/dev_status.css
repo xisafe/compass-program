@@ -1,0 +1,335 @@
+#elvis_right_content{
+	top:0;
+	height:1000px !important;
+}
+#module-content23{
+	/* height: 724px !important; */
+}
+.module{
+	width: 49%;
+	height: 48.5%;
+	min-height: 280px;
+	min-width: 480px;
+	float: left;
+	margin: 5px;
+	border: 1px solid rgb(168,185,205);
+	box-sizing: border-box;
+	box-shadow: 3px 3px rgb(222,226,227);
+}
+.title-box{
+	background: none;
+	background-image: url(../images/con-header-bg.jpg);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+	list-style: none;
+	border-bottom: 1px solid rgb(168,185,205);
+	padding-left: 5px;
+	font-weight: bolder;
+	margin: 0;
+	line-height: 24px;
+	display: block;
+	width: inherit;
+	height: 24px;
+	width: 100%;
+	box-sizing: border-box;
+}
+.title-box>span{
+	color: rgb(14,50,128);
+	font-size: 15px;
+}
+.content-box{
+	position: relative;
+	height: 92%;
+	background: rgb(243,248,252);
+}
+.tool-box{
+	display:inline-block;
+	float:right;
+	margin-right:4px;
+}
+.left-box{
+	width: 40%;
+	float: left;
+	padding: 5px 0;
+	color: #000;
+}
+#info_list li{
+	padding-left:5px;
+	/*height: 20px;*/
+	line-height: 20px;
+	margin: 2px auto;
+	clear: both;
+}
+#info_list li>span{
+	margin-left:4px;
+}
+.right-box{
+	width:60%;
+	float:right;
+	height: 100%;
+	padding: 5px 0;
+	position:relative
+}
+.right-box::before{
+	content:"";
+	width:1px;
+	height:60%;
+	background: -webkit-linear-gradient(rgba(228, 233, 236, 0.19),rgb(199,204,207),rgba(216, 224, 228, 0.17));
+	background: -moz-linear-gradient(rgba(228, 233, 236, 0.19),rgb(199,204,207),rgba(216, 224, 228, 0.17));
+	background: -o-linear-gradient(rgba(228, 233, 236, 0.19),rgb(199,204,207),rgba(216, 224, 228, 0.17));
+	background: linear-gradient(rgba(228, 233, 236, 0.19),rgb(199,204,207),rgba(216, 224, 228, 0.17));
+	position:absolute;
+	top:40px;
+	left:-5px;
+}
+.right-box::after{
+	content:"";
+	position:absolute;
+	top:32px;
+	left:1px;
+	width:90%;
+	height:1px;
+	background: rgb(199,204,207);
+}
+.list{
+	border:none;
+}
+#list_panel_id_for_listPanel .rule-list{
+	border:none
+}
+.odd_class_self{
+	background:rgb(255,255,255);
+
+}
+.even_class_self{
+	
+	background-color:rgb(246,250,253);
+}
+.odd_class_self td, .even_class_self td{
+	border:none;
+	border-bottom: 1px solid rgb(238,238,240);
+	text-align: left;
+	text-indent:2px;
+	color:#000
+}
+.rule-listbh{
+	background: rgb(243,248,252);
+	background: url("/images/thead-bg.png");
+}
+.rule-listbh td{
+	border:1px solid rgb(208,209,211);
+	text-align: left;
+	text-indent: 4px;
+}
+
+
+#rule_listb_for_listPanel td{
+	border:none
+
+}
+
+.toolbar{
+	border:none;
+}
+.config_panel{
+	display: none;
+	position: absolute;
+	z-index: 60;
+	top:30%;
+	left: 50%;
+	background-color: #fff;
+	transform: translate(-50%, -50%);
+}
+.popup-mesg-box-cover{
+	display: none;
+}
+.config-box{
+
+}
+.config-title{
+	color: #615d5d;
+	padding-left: 22px;
+	width:270px;
+	background-image: url(../images/con-header-bg.jpg);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+.config-title>span{
+	padding:0 2px;
+}
+.config-title>span::before{
+	content:"";
+	width: 18px;
+	height: 18px;
+	background:url('/images/setting16x16.png') no-repeat center 100%;
+	position: absolute;
+	left: 4px;
+	top: 3px;
+	/* 	border-radius:4px; */
+}
+.config-footer{
+	background:#8ebff2;
+	text-align:center;
+	/* height:30px; */
+	line-height: 25px;
+	background-image: url(../images/con-header-bg.jpg);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+.content ul li{
+	height: 30px;
+	padding-left:10px;
+	line-height: 30px;
+	font-weight:normal;
+}
+.content ul li>span{
+	margin: 0 2px;
+	width: 40%;
+	display: inline-block;
+}
+.content ul li>input{
+}
+.config-number{
+	width:40px;
+}
+.config-btn{
+	line-height:30px;
+	width:50px;
+	margin: 0 10px;
+}
+.radioGroup{
+	display: inline-block;
+	margin-left: -3px;
+}
+.radioGroup label{
+	font-weight: 400;
+	width: 50px;
+	margin-left: 4px;
+	display: inline-block;
+}
+#throughput_config .config-title{
+	width:370px;
+}
+#throughput_config .content ul li>span{
+	width:30%
+
+}
+.info-box{
+	position: absolute;
+    right: 48px;
+    top: 30px;
+    
+    
+}
+#throughtout_zone{
+	margin: -3px;
+    width: 150px;
+}
+.square{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 3px;
+    background-color: white;
+}
+.tx_value,.rx_value{
+	font-weight: 600;
+}
+.rx_value{
+	color: rgb(80,180,50);
+}
+.tx_value{
+	color: rgb(5,141,199);
+}
+.content{
+	margin: 2px auto;
+}
+.left_value{
+	width: 20%;
+	float:left;
+}
+.center_value{
+	width: 55%;
+	float:left;
+	height: 14px;
+	margin: 3px auto;
+}
+.right_value{
+	width: 20%;
+	float: right;
+}
+#cpu_bar,#disk_bar,#memory_bar{
+	height: 10px;
+	border-radius: 0;
+	/* margin: 1px; */
+	padding: 1px;
+}
+.ui-widget-header{
+	border-radius:0;
+}
+.ui-progressbar .ui-progressbar-value {
+	margin:0;
+}
+.btn-class{
+	width: 20px;
+	height: 20px;
+	border: none;
+	margin: 2px;
+}
+.refesh{
+	background:url('/images/fresh16x16.png') no-repeat center;
+}
+.setting{
+	background:url('/images/setting16x16.png') no-repeat center;
+}
+#list_panel,#interface_panel,#safeEvent_panel{
+	height: 95%;
+	overflow-y: auto;
+	width: 99%;
+	margin: 2px auto;
+}
+#list_panel{
+	width:98%;
+}
+.net_image{
+	display: inline-block;
+	width: 35px;
+	height: 22px;
+	vertical-align: middle;
+	 margin: 2px 0; 
+	background: url("/images/net-image.png") no-repeat center;
+}
+.dis_net_image{
+	width: 35px;
+	vertical-align: middle;
+	height: 22px;
+	background: url("/images/dis-net-image.png") no-repeat center;
+	display: inline-block;
+	margin: 2px 0;
+}
+#panel_header_id_for_listPanel>td{
+	text-align: left;
+	text-indent: 4px;
+	background:rgb(243,248,252);
+	border:none;
+	/* border-right: none !important; */
+	/* border-bottom: 1px solid rgb(199,204,207); */
+}
+#rule_listb_for_listPanel td{
+	text-align:left;
+	text-indent: 4px;
+	color:#000;
+}
+
+#info_list{
+	border-top: 1px solid rgb(199,204,207);
+    margin-top: 2px;
+}
+#sys_info{
+	    padding: 3px 5px;
+    margin-top: 7px;
+    font-weight: bold;
+}
+#list_panel_id_for_interfacePanel .container-main-body{
+	overflow-y: hidden;
+}

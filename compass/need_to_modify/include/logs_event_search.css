@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+.time_input {
+    width: 100px;
+}
+.list {
+    margin-top: 0px;
+}
+.rule-list {
+    /*border-top: none;*/
+}
+.opt-tools {
+    /*margin: 0px;*/
+}
+.search {
+    float: left;
+}
+.parameter_config_panel {
+    background-color: #D0DFF2;
+    width: 96%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.parameter_config_panel_boder {
+    border: solid 1px #AAA;
+    border-bottom: none;
+}
+.parameter_config_items {
+    float: left;
+    margin: 10px 10px;
+}
+.parameter_config_item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.parameter_config_select, .parameter_config_text {
+    width: 100px;
+    height: 20px;
+}
+.parameter_config_select {
+    height: 24px;
+}
+.float_left {
+    float: left;
+}
+.float_right {
+    float: right;
+}
+.clear_both {
+    clear: both;
+}
+.classification-text {
+    color: #087ACA;
+    cursor: pointer;
+    font-size: 15px;
+}
+.high-risk {
+    color: #FF0000;
+    font-weight: bold;
+}
+.medium-risk {
+    color: #FF9900;
+    font-weight: bold;
+}
+.low-risk {
+    color: #64C908;
+}
+.sip-merged, .dip-merged, .sdip-merged {
+    color: #A5A2A2;
+}
+.suggestion-img {
+    width: 12px;
+    height: 12px;
+}

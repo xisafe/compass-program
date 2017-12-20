@@ -1,0 +1,46 @@
+#panel_user_group {
+	width: 208px;
+	height: 609px; 
+	float: left; 
+	background-color: #e6eff8;
+	border: 1px solid #d8d8d8;
+	border-right: 0;
+	border-top: 0;
+}
+#user_group_title {
+	overflow: hidden;
+	background-color: #D0DFF2;
+	height: 31px;
+	line-height: 31px;
+	border: 1px solid #d8d8d8;
+
+}
+#user_group_title div {
+	display: inline-block;
+	padding-left: 10px;	
+	font-weight:bold;
+	color: #333;
+}
+#user_group {
+	border-top: 1px solid #d8d8d8;
+	color: #333;
+}
+
+#list_panel {
+	margin-left: 208px;
+	width: auto;
+}
+#list_panel_id_for_list_panel .toolbar:nth-child(1) {
+	height: 31px;
+	border-left: 1px solid #d8d8d8;
+}
+#list_panel_id_for_list_panel .toolbar:nth-child(3) {
+	height: 28px;
+}
+#user_group_title .noArrow {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	margin-right: 10px;
+	background-color: transparent;
+}

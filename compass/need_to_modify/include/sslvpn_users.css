@@ -1,0 +1,55 @@
+.appendimage{
+	margin-left:10px;
+}
+.multi_line{
+	height:25px;
+	padding:0px;
+	margin-top:5px;
+}
+
+#add-div-orgz,#add-div-ugrp ,#add-div-upload{
+width:96%;
+margin:20px auto;
+border:1px solid #DDD;
+height:auto;
+}
+
+#add-div-header-orgz ,#add-div-header-ugrp ,#add-div-header-upload{
+width:100%;
+padding-top:2px;
+height:25px;
+line-height:25px;
+background-image:url(../images/con-header-bg.jpg);
+border-bottom:1px solid #999;
+font-size:13px;
+color:#192027;
+font-weight:bold;
+cursor:pointer;
+}
+
+
+/*#add-div-header-orgz ,#add-div-header-ugrp img{
+display:block;
+float:left;
+margin:5px 0px -5px 5px;
+cursor:pointer;
+}*/
+
+#add-div-content-orgz ,#add-div-content-ugrp ,#add-div-content-upload{
+width:100%;
+}
+
+#add-div-content-orgz ,#add-div-content-ugrp ,#add-div-content-upload table{
+width:100%;
+}
+
+/*#add-div-content-orgz ,#add-div-content-ugrp >table>tr>td{
+border-bottom:1px solid #AAA;
+height:30px;
+line-height:30px;
+font-size:12px;
+}*/
+
+.clear {
+     clear: both;
+}

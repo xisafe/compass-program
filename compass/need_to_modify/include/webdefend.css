@@ -1,0 +1,148 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.webdefend-textarea {
+    width: 172px;
+    height: 70px;
+    resize: none;
+}
+.webdefend-note {
+	position: relative;
+    top: -15px;
+}
+
+.mesg-box-s tr.add-panel-odd-line td.add-panel-subtitle, .mesg-box-s tr.add-panel-even-line td.add-panel-subtitle{
+	width: 36%;
+}
+
+tr.add-panel-odd-line td.add-panel-subtitle, tr.add-panel-even-line td.add-panel-subtitle{
+	text-indent: -3px;
+	text-align: center;
+}
+.mesg-box-s{
+	left:45%;
+	top: 54%;
+}
+#mgxx_add_panel .mesg-box-s{
+	top: 41%;
+}
+#mgxx_select{
+	width: 150px;
+    vertical-align: middle;
+}
+
+#list_panel_id_for_mgxx_add_panel .container-main-body{
+	width: auto;
+	max-height: 270px;
+}
+#list_panel_id_for_mgxx_add_panel .container-main-body-s{
+	padding: 19px;
+    padding-bottom: 0px;
+    padding-top: 10px;
+    max-height: 270px;
+}
+
+.mgxx_add_panel_title {
+	margin-bottom: 5px;
+	    padding: 10px 0px 0px 20px;
+}
+.mgxx_add_panel_title span{
+	font-size: 14px;
+}
+.mgxx_add_panel_title .title_tips{
+	font-size: 12px;
+	opacity: 0.6;
+}
+#mgxx_add_panel_form{
+	padding-left: 20px;
+    margin: 10px;
+}
+#mgxx_add_panel_form li{
+	padding:6px;
+}
+#mgxx_add_panel_form li span{
+	display:inline-block;
+	width: 95px;font-size: 14px;
+}
+#mgxx_add_panel_form li input{
+	text-indent: 2px;
+	width: 200px;height: 17px;
+	margin-left: 20px
+}
+.paging-tools img{
+	margin-right: 0px;
+	    margin: 5px 3px;
+    
+}
+.paging-text{
+	width: 100px;
+}
+
+#add_panel_title_for_hideSite_panel {
+	margin: 0px;
+}
+#add_panel_title_for_brute_panel {
+	margin: 0px;
+}
+
+#add_panel_body_form_id_for_hideSite_panel td.add-panel-subtitle {
+	width: 0%;
+    display: none;
+} 
+#add_panel_header_id_for_hideSite_panel{
+	min-height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    
+}
+
+#add_panel_body_form_id_for_hideSite_panel .add-panel-footer{
+	width: 100%;
+    vertical-align: middle;
+        padding-bottom: 2px;
+}
+
+#add_panel_body_form_id_for_hideSite_panel .add-panel-footer input {
+	    width: 80px;
+	    margin: 4px 5px;
+}
+
+
+#add_panel_header_id_for_brute_panel {
+	min-height: 30px;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+   
+}
+
+#add_panel_body_form_id_for_brute_panel .add-panel-footer{
+	width: 100%;
+    vertical-align: middle;
+    padding-bottom: 2px;
+}
+
+#add_panel_body_form_id_for_brute_panel .add-panel-footer input {
+	    width: 80px;
+	    margin: 4px 5px;
+}
+#TransparentBorder_csrf_add_panel{
+	z-index: 1002;
+}
+#popup-mesg-border-box-cover-csrf_add_panel{
+	z-index: 1001;
+}
+#popup-mesg-border-box-cover-mgxx_add_panel{
+	z-index: 1000!important;
+}
+.add-panel-section{
+	background-color:#e4e8eb;
+}
+.add-panel-subtitle{
+	background-color:#e4e8eb;
+}
+tr.add-panel-odd-line td.add-panel-subtitle, tr.add-panel-even-line td.add-panel-subtitle {
+	background-color:#e4e8eb;
+}

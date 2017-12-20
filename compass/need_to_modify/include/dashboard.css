@@ -1,0 +1,200 @@
+div.dashboard_container {
+    padding: 5px;
+    padding-top: 0px;
+    margin: 0px;
+    border: 1px solid #dddddd;
+    font-size: 13px;
+}
+#dashboard {
+    width: 100%;
+    min-width: 810px;
+    margin: 0px;
+    position: relative;
+}
+div.dashboard_right_container {
+    width: 68%;
+    min-width: 400px;
+    margin: 0px 0px 0px 32%;
+}
+div.dashboard_left_container {
+    width: 30%;
+    min-width: 200px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+}
+table.dashboard_percentage {
+    border-spacing: 0;
+    padding: 0;
+    border: 1px solid #61bffb;
+    width: 80px;
+    height: 10px;
+}
+table.dashboard_percentage td.used {
+    height: 10px;
+    margin: 0px;
+    background-image: url(../images/percent_bg_low.jpg);
+}
+table.dashboard_percentage td.unused {
+    margin: 0px;
+    background-color: #fff;
+}
+table.dashboard {
+    border-spacing: 0;
+}
+table.dashboard tr.bridge td,
+table.dashboard tr.bridge th {
+    border-top: dotted 1px rgb(160, 160, 160);
+    padding-bottom: 2px;
+}
+.per_dot > td {
+    border-bottom: dotted 1px rgb(160, 160, 160);
+    padding: 4px 0px 2px 0px;
+}
+.dashboard_container table tr th {
+    text-align: left;
+}
+table.dashboard tr.device td,
+table.dashboard tr.device th {
+    border-top: dotted 1px rgb(160, 160, 160);
+    padding-bottom: 2px;
+}
+table.dashboard tr.uplink td,
+table.dashboard tr.uplink th {
+    border-top: dotted 1px rgb(160, 160, 160);
+    padding-bottom: 2px;
+}
+table.dashboard td.legend {
+    border-top: solid 1px #cccccc;
+}
+table.dashboard td {
+    padding-top: 2px;
+    padding-bottom: 3px;
+}
+table.dashboard th.orange,
+table.dashboard td.orange {
+    color: #df920b;
+    font-weight: bold;
+}
+table.dashboard th.blue,
+table.dashboard td.blue {
+    color: #069bd9;
+    font-weight: bold;
+}
+table.dashboard th.red,
+table.dashboard td.red {
+    color: #df1f0b;
+    font-weight: bold;
+}
+table.dashboard th.green,
+table.dashboard td.green {
+    color: #249f07;
+    font-weight: bold;
+}
+table.dashboard th.purple,
+table.dashboard td.purple {
+    color: purple;
+    font-weight: bold;
+}
+td {
+    line-height: 25px;
+    text-indent: 5px;
+}
+.db-task-count {
+    font-weight: bold;
+}
+#live-traffic-graph-rx,
+#live-traffic-graph-tx {
+    height: 150px;
+    min-width: 360px;
+    width: 100%;
+    text-align: center;
+    line-height: 150px;
+}
+div.dashboard-service {
+    position: relative;
+    border-bottom: solid 1px #cccccc;
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+span.db-service-name {
+    position: absolute;
+    left: 0px;
+    font-weight: bold;
+}
+div.db-service-messages {
+    width: 100%;
+    border-top: dotted 1px rgb(160, 160, 160);
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 3px;
+}
+span.db-service-on {
+    color: #339933;
+    font-weight: bold;
+}
+span.db-service-off {
+    color: #993333;
+    font-weight: bold;
+}
+span.db-service-livelog {
+    position: absolute;
+    right: 40px;
+}
+span.db-service-on,
+span.db-service-off {
+    position: absolute;
+    right: 0px;
+}
+div.dashboard-graph-title {
+    margin-top: 7px;
+}
+div.db-service-messages > div.db-service-desc:first-child {
+    padding: 5px 0px 4px 0px;
+}
+#loading {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+div.dashboard_header > ul {
+    background: none;
+    background-image: url(../images/con-header-bg.jpg);
+    background-position: bottom left;
+    background-repeat: repeat-x;
+    list-style: none;
+    border-right: 1px solid #ccc;
+    padding-left: 5px;
+    font-weight: bold;
+    color: #656565;
+    margin: 0;
+    line-height: 24px;
+    display: block;
+    width: inherit;
+    height: 24px;
+}
+div.dashboard_header > ul >li {
+    margin: 0;
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+div.dashboard_header ul li a {
+    text-decoration: none;
+    font-weight: normal;
+    color: #666;
+}
+div.dashboard_header ul li.selected {
+    float: left;
+    background-color: #fff;
+    border-top: 1px solid #a6a6a6;
+    border-left: 1px solid #a6a6a6;
+    border-right: 1px solid #a6a6a6;
+    height: 23px;
+}
+div.dashboard_header ul li.selected a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #666;
+}

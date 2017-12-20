@@ -1,0 +1,18 @@
+fieldset{border-left: none;border-right:none;border-bottom: 0;margin-bottom: 20px;width: 610px;border-width: 1px;}
+.main{margin-top: 10px;margin-left: 10px;}
+legend{padding: 0px 12px;margin-left: 45px;font-weight: bold;}
+.update-info{display: block;overflow: auto;margin-top:10px;}
+.update-info li{float: left;list-style: none;padding: 0px 20px;}
+.update-info li:first-child{width: 160px;}
+.green{color: green;font-weight: bold;}
+.red{color: red;font-weight: bold;}
+.modify{color: blue;text-decoration: underline;}
+.modify:hover{cursor: pointer;}
+.facility{font-weight: bold;}
+
+.containter-div-header{border-left: none;border-right: none;}
+.containter-div {
+    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #AAA;
+    border-right: 1px solid #aaa;
+}

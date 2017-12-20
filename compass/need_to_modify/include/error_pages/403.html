@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <div class="content">
+            <h1>禁止访问</h1>
+            <p>你的操作包含非法动作，已被禁止执行！</p>
+        </div>
+        <div class="header">
+            <p>
+                <span id="time_left">5</span>
+                秒后将自动
+                <a href="#" onclick="return go_back();">返回操作页面</a>
+            </p>
+        </div>
+        <script type="text/javascript">
+            function go_back(){
+                history.go(-1);
+                return false;
+            }
+            function update_time() {
+                var time_left = document.getElementById( "time_left" ).firstChild.nodeValue;
+                time_left = time_left - 1;
+                document.getElementById( "time_left" ).firstChild.nodeValue = time_left;
+                if ( time_left == 0 ) {
+                    go_back();
+                }
+                window.setTimeout( "update_time();", 1000 );
+            }
+            window.setTimeout( "update_time();", 1000 );
+        </script>
+    </body>
+</html>

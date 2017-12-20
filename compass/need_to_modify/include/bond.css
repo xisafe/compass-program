@@ -1,0 +1,13 @@
+.GREEN{
+    /*color:#339933;*/
+    color:#249f07;
+}
+.ORANGE{
+    color:#df920b;
+}
+.RED{
+    color:#f00;
+}
+.unoccupied {
+    color: #000;
+}

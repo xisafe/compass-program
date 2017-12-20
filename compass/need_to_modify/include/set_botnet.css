@@ -1,0 +1,11 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.setbotnet-textarea {
+    width: 172px;
+    height: 70px;
+    resize: none;
+}
+.setbotnet-note {
+	position: relative;
+    top: -15px;
+}
