@@ -180,6 +180,7 @@ table.ruleslist {
     table-layout: fixed;
     tr{
     	@include line-height(25px);
+        border-bottom: 1px solid #eeeeee;
     }
     td,th{
 		text-align: left;
@@ -194,7 +195,18 @@ table.ruleslist {
 		text-align:center;
     }
 }
-
+.table_note td div {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ba7b0e;
+    margin: 0px auto;
+    text-align: center;
+    img{
+        width: 25px;
+        height: 25px;
+        margin-bottom: -6px;
+    }
+}
 table.ruleslist td.actions {
 	min-width: 160px;
 }

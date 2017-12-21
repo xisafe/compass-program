@@ -990,6 +990,9 @@ RuleAddPanel.prototype.cancel_edit_box = function() {
     rule_add_panel.switch_to_adding_status();
 
     if (panel_config.is_modal) {
+        $('.popup-check,.popup-tip').hide();
+        $('.popup-img-class').attr('src', '/images/linkna.png');
+        $('.popup-error-tip').remove();
         if (panel_config.border_transparent) {
             rule_add_panel.HideForBorder();
         }
@@ -1180,9 +1183,7 @@ RuleAddPanel.prototype.HideForBorder = function() {
     var check_in_selector = "#" + panel_config.check_in_id;
 
     if(panel_config.modal_config !== undefined){
-        $('.popup-check,.popup-tip').hide();
-        $('.popup-img-class').attr('src', '/images/linkna.png');
-        $('.popup-error-tip').remove();
+        
         var modal_config = panel_config.modal_config;
         var close_class_name = 'close_TransparentBorder_' + modal_config.modal_box_size;
         var open_class_name = 'open_TransparentBorder_' + modal_config.modal_box_size;
@@ -1228,21 +1229,22 @@ RuleAddPanel.prototype.create_popup_item_detail = function(item) {
     var popup_item_detail ='';
 
     var cont = item.popup ;
-    var is_check = item.check ;
     if (typeof(cont) == 'string') {
         popup_item_detail += '<li><span class="tip-title">提示信息:</span>'+cont+'</li>';
     }else{
-        for (var i = 0; i < cont.length; i++) {
-            cont[i] = cont[i].replace(/\}\}/g, '</font>');
-            cont[i] = cont[i].replace(/\{r\{/g, '<font style="color:/*green*/;">');
-            cont[i] = cont[i].replace(/\{g\{/g, '<font style="color:/*green*/;">');
-            if (i==0) {
-                popup_item_detail += '<li class="popup-cont"><span class="tip-title">提示信息:</span>' + cont[i] + '</li>';
-            }else{
-                popup_item_detail += '<li class="popup-cont"><span class="tip-title"></span>' + cont[i] + '</li>';
+        if(!!cont){
+            for (var i = 0; i < cont.length; i++) {
+                cont[i] = cont[i].replace(/\}\}/g, '</font>');
+                cont[i] = cont[i].replace(/\{r\{/g, '<font style="color:/*green*/;">');
+                cont[i] = cont[i].replace(/\{g\{/g, '<font style="color:/*green*/;">');
+                if (i==0) {
+                    popup_item_detail += '<li class="popup-cont"><span class="tip-title">提示信息:</span>' + cont[i] + '</li>';
+                }else{
+                    popup_item_detail += '<li class="popup-cont"><span class="tip-title"></span>' + cont[i] + '</li>';
+                }
             }
         }
-        if (is_check) {
+        if (!!item.check && !$.isEmptyObject(item.check)) {
             popup_item_detail += '<li ';
             var check_attr_obj = {
                 id : 'error_item_id_for_' + item.name,
@@ -1838,7 +1840,7 @@ RuleAddPanel.prototype.create_widget_postfix_tip = function(item) {
     var rule_add_panel = this;
     var widget_tip = "";
 
-    if (item.popup !== undefined && item.popup) {
+    if ((item.popup !== undefined && item.popup) || (!!item.check && !$.isEmptyObject(item.check))) {
         item.label_class_default_value = 'add-panel-postfix-tip';
         widget_tip = rule_add_panel.create_widget_tip(item);
     }

@@ -33,6 +33,29 @@
 .mesg-box{
 	display:none;
 }
+#pop-apply-div{
+	@include set_size(30%*0.96);
+    margin: 15px auto;
+    padding: 10px 90px;
+    background-color: #FFF;
+    text-align: center;
+    border: 1px solid #53A4EA; 
+    @include set_font(14px);
+    color:#666768;
+	img{
+    	@include set_size(32px,32px);
+	    vertical-align: middle;
+    }
+	span:first-child{
+		width: 100%;
+	    margin-bottom: 10px;
+	}
+	span#cancel{
+		@include set_size();
+		margin-top: 15px;
+		display:block;
+	}
+}
 .net_button {
 	@include hover();
 	@include set_color(#fff,#5BC0DE);
@@ -69,6 +92,9 @@
 }
 .popup-short-mesg-note-mesg {
     color: #000000;
+}
+.popup-short-mesg-alert-mesg{
+	color:red;
 }
 .popup-short-mesg-buttons {
     margin: 0px;
