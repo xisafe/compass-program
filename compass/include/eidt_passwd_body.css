@@ -1,0 +1,70 @@
+#eidt_passwd_body {
+	top: 0px;
+	left: 0px;
+	border: none;
+}
+.modifypsd-header {
+	background-color: #f2f2f2;
+	text-align: left;
+    padding-left: 12px;
+    color: #000;
+    height: 34px;
+/*    border-bottom: 1px solid;
+    border-color: #ccc;*/
+}
+
+#have_to_mesg {
+	background-color: #ffffff;
+	color: red;
+	text-align: left;
+	margin-left: 22%;
+	margin-top: 5px;
+}
+
+.modifypsd-right{
+	position: relative;
+}
+
+.modifypsd-right input{
+	margin-top: 15px;
+	width:235px;
+	margin-bottom:5px;
+}
+
+.modifypsd-newagain .modifypsd-right input{
+	margin-bottom: 15px;
+}
+
+.modifypsd-left span {
+	margin-left:25px;
+	color: #000;
+}
+.modifypsd-left {
+	width: 22%;
+}
+
+#eidt_passwd_body td {
+	vertical-align: baseline;
+}
+
+.add-panel-footer input {
+	min-width: 98px;
+}
+
+.add-panel-footer input:nth-child(1){
+	position: absolute;
+    left: 18%;
+}
+.add-panel-footer input:nth-child(3){
+	position: absolute;
+    left: 54%;
+}
+
+.userTipError {
+	font-size: 13px;
+    position: absolute;
+    top: 119px;
+    left: 365px;
+    display: inline-block;
+    min-width: 200px;
+}

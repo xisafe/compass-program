@@ -1,0 +1,1386 @@
+#!/usr/bin/perl
+#
+# openvpn CGI for Endian Firewall
+#
+
+#
+#        +-----------------------------------------------------------------------------+
+#        | Endian Firewall                                                             |
+#        +-----------------------------------------------------------------------------+
+#        | Copyright (c) 2005-2006 Endian                                              |
+#        |         Endian GmbH/Srl                                                     |
+#        |         Bergweg 41 Via Monte                                                |
+#        |         39057 Eppan/Appiano                                                 |
+#        |         ITALIEN/ITALIA                                                      |
+#        |         info@endian.it                                                      |
+#        |                                                                             |
+#        | This program is free software; you can redistribute it and/or               |
+#        | modify it under the terms of the GNU General Public License                 |
+#        | as published by the Free Software Foundation; either version 2              |
+#        | of the License, or (at your option) any later version.                      |
+#        |                                                                             |
+#        | This program is distributed in the hope that it will be useful,             |
+#        | but WITHOUT ANY WARRANTY; without even the implied warranty of              |
+#        | MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the               |
+#        | GNU General Public License for more details.                                |
+#        |                                                                             |
+#        | You should have received a copy of the GNU General Public License           |
+#        | along with this program; if not, write to the Free Software                 |
+#        | Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA. |
+#        | http://www.fsf.org/                                                         |
+#        +-----------------------------------------------------------------------------+
+#
+
+
+# -------------------------------------------------------------
+# some definitions
+# -------------------------------------------------------------
+
+require 'ifacetools.pl';
+require '/var/efw/header.pl';
+require './endianinc.pl';
+
+use Net::IPv4Addr qw (:all);
+use Spreadsheet::WriteExcel;
+use CGI::Carp qw (fatalsToBrowser);
+use CGI qw(:standard);
+my $cgi= new CGI; 
+
+
+my $restart  = '/usr/local/bin/restartopenvpn';
+my $passwd   = '/usr/bin/openvpn-sudo-user';
+my $etherconf = "/var/efw/ethernet/settings";
+my $openvpnconf = "/var/efw/openvpn/settings";
+
+
+
+my $dirtyfile  = '/var/efw/openvpn/dirtyuserconfig';
+
+my $name        = _('OpenVPN server');
+my %checked     = ( 0 => '', 1 => 'checked', 'on' => 'checked');
+my $self = $ENV{SCRIPT_NAME};
+
+my %par;
+my $action = '';
+my $username = '';
+my $errormessage = '';
+my $err = 1;
+my $config = 0;
+my $CACERT_FILE = '/var/efw/openvpn/cacert.pem';
+my @errormessages;
+
+
+sub check_form(){
+  printf <<EOF
+  <script>
+  var check = new ChinArk_forms();
+  var object = {
+       'form_name':'USER_FORM',
+       'option'   :{
+                    'username':{
+                               'type':'text',
+                               'required':'1',
+                               'check':'name|',
+                               'ass_check':function(eve){
+                                                        var msg="";
+                                                        var key = 0;
+                                                        var username = eve._getCURElementsByName("username","input","USER_FORM")[0].value;
+                                                        if(!eve.users){
+                                                            \$.ajax({
+                                                                  type : "get",
+                                                                  url : '/cgi-bin/chinark_back_get.cgi',
+                                                                  async : false,
+                                                                  data : 'path=/var/efw/openvpn/passwd',
+                                                                  success : function(data){ 
+                                                                    eve.users = data;                                                                     
+                                                                  }
+                                                            });
+                                                        }
+                                                        var exist = eve.users.split('\\n');
+                                                        for (var i = 0; i < exist.length; i++) {
+                                                            var tmp = exist[i].split(':');
+                                                            if(username == tmp[0]){
+                                                                msg = '用户名'+username+'已存在';
+                                                                break;
+                                                            }
+                                                        }
+                                                        return msg;
+                                                     }
+                             },
+                    'password':{
+                               'type':'password',
+                               'required':'1',
+                             },
+                    'password2':{
+                               'type':'password',
+                               'required':'1',
+                               'ass_check':function(eve){
+                                   var msg ='';
+                                   var pass1 = eve._getCURElementsByName("password","input","USER_FORM")[0].value;
+                                   var pass2 = eve._getCURElementsByName("password2","input","USER_FORM")[0].value;
+                                   if (pass1 != pass2){
+                                      msg = "密码不一致";
+                                   }
+                                   return msg;
+                               }
+                             },
+                    'custom_domain':{
+                               'type':'text',
+                               'required':'0',
+                               'check':'domain_suffix|',
+                             },
+                    'remotenets':{
+                               'type':'textarea',
+                               'required':'0',
+                               'check':'ip_mask|',
+                             },
+                    'explicitroutes':{
+                               'type':'textarea',
+                               'required':'0',
+                               'check':'ip_mask|',
+                             },
+                    'static_ip':{
+                               'type':'textarea',
+                               'required':'0',
+                               'check':'ip|',
+                               'ass_check':function(eve){
+                                                        var msg="";
+                                                        var key = 0;
+                                                        var ips = eve._getCURElementsByName("static_ip","textarea","USER_FORM")[0].value;
+                                                        var all_ips = ips.split('\\n');
+                                                        if(!eve.interface){
+                                                            \$.ajax({
+                                                                  type : "get",
+                                                                  url : '/cgi-bin/chinark_back_get.cgi',
+                                                                  async : false,
+                                                                  data : 'path=/var/efw/ethernet/settings',
+                                                                  success : function(data){ 
+                                                                  eve.interface = data;                                                                     
+                                                                  }
+                                                                  });
+                                                        }
+                                                        var exist = eve.interface.split('\\n');
+                                                        var green,orange;
+                                                        for (var i = 0; i < exist.length; i++) {
+                                                            var tmp = exist[i].split('=');
+                                                            if(tmp[0] == "GREEN_IPS"){
+                                                              green = tmp[1];
+                                                              var temp = green.split('\/');
+                                                              green = temp[0];
+                                                            }
+                                                            if(tmp[0] == "ORANGE_IPS"){
+                                                               orange = tmp[1];
+                                                              var temp = orange.split('\/');
+                                                              orange = temp[0];
+                                                            }
+                                                        }
+                                                        for (var i = 0; i < all_ips.length; i++) {
+                                                             if (all_ips[i] == green){
+                                                                 msg = "静态IP地址不同与绿色接口相同";
+                                                             }
+                                                             if (all_ips[i] == orange){
+                                                                 msg = "静态IP地址不同与橙色接口相同";
+                                                             }
+                                                        }
+                                                        return msg;
+                                                     }
+                             },
+                    'custom_dns':{
+                               'type':'textarea',
+                               'required':'0',
+                               'check':'ip|',
+                             },
+                 }
+         }
+  check._main(object);
+  //check._get_form_obj_table("USER_FORM");
+  </script>
+EOF
+;
+}
+
+sub ip2long {
+    return unpack("l*", pack("l*", unpack("N*", inet_aton(shift))));
+}
+
+sub restart() {
+    my $logid = "$0 [" . scalar(localtime) . "]";
+	system("rm $dirtyfile");
+    print STDERR `$restart --force`; 
+    print STDERR "$logid: restarting done\n";
+    $notemessage = _('OpenVPN server has been restarted!');
+}
+
+sub list_users() {
+
+    my $canreadcacert = 0;
+    if (open F, $CACERT_FILE) {
+        $canreadcacert = 1;
+        close(F);
+    }
+
+    #openbox('100%', 'left', _('Account configuration'));
+printf <<EOF
+<table border="0" class="ruleslist" cellspacing="0" cellpadding="4" width="100%">
+  <tr>
+    <td width="20%" class="boldbase"><b>%s</b></td>
+    <td width="20%" class="boldbase"><b>%s</b></td>
+    <td width="20%" class="boldbase"><b>%s</b></td>
+    <td width="20%" class="boldbase"><b>%s</b></td>
+    <td width="20%" class="boldbase"><b>%s</b></td>
+  </tr>
+EOF
+, _('Username')
+, _('Remote nets')
+, _('Push nets')
+, _('Static ip')
+, _('Actions')
+;
+
+EOF
+;
+
+    my @users = split(/\n/, `$passwd longlist`);
+    my $i = 0;
+	my $length = @users;
+	#跳转页面参数控制 殷其雷 2013-3-7
+	my $offset;
+	my $total;
+	my $next;
+	my $last;
+	#END
+	if($length >0)
+	{
+	#页面参数设置并只显示当前页面20条记录 殷其雷 2013-3-7
+	$offset = 1; 
+	if ($par{'OFFSET'} =~ /^\d+$/) {
+		$offset = $par{'OFFSET'};
+	}
+	if ($offset < 1) {
+		$offset = 1;
+	}
+	$total = POSIX::ceil($length/20);
+	if ($offset > $total) {
+		$offset = $total;
+	}
+    $next = $offset + 1;
+	$last = $offset - 1;
+	my $num = 0;
+	$num = $num + $last*20;
+	if ($num < 0) {
+		$num = 0;
+	}
+	my $start = ($offset-1) * 20;
+	
+    foreach my $line (@users) {
+	   if($i >= $start && $i < $start+20) {
+	my @split = split(/:/, $line);
+	my $user = $split[0];
+	my $remotenets = $split[5];
+	$remotenets =~ s/,/<BR>/;
+	my $pushnets = $split[7];
+	$pushnets =~ s/,/<BR>/;
+	my $staticips = $split[8];
+	$staticips =~ s/,/<BR>/;
+
+	if ($split[6] eq 'on') {
+	    $pushnet = _('None');
+	}
+	if ($staticips eq '') {
+	    $staticips = _('dynamic');
+	}
+
+	my $oddeven = 'oodd';
+	if ($i % 2) {
+	    $oddeven = 'even';
+	}
+	
+	my $gif = 'off.png';
+	my $enabled_action = 'enable';
+	my $enabled_description = _('Enable account');
+	if ($split[1] eq 'enabled') {
+	    $gif = 'on.png';
+	    $enabled_action = 'disable';
+	    $enabled_description = _('Disable account');
+	}
+
+	printf <<EOF
+<tr class="$oddeven">
+  <td>$user</td>
+  <td>$remotenets</td>
+  <td>$pushnets</td>
+  <td>$staticips</td>
+EOF
+;
+
+
+        printf <<EOF
+  <td>
+<form method='post' action='$self' style="float:left;margin-left:5px;">
+    <input class='imagebutton' type='image' name='$enabled_description' src='/images/$gif' alt='$enabled_description' title='$enabled_description'>
+    <input type="hidden" name="ACTION" value="$enabled_action">
+    <input type="hidden" name="username" value="$user">
+</form>
+
+
+
+<form method='post' action='$self' style="float:left;margin-left:5px;">
+    <input class='imagebutton' type='image' name='%s' src='/images/edit.png' alt='%s' title='%s'>
+    <input type="hidden" name="ACTION" value="set">
+    <input type="hidden" name="username" value="$user">
+</form>
+
+<form method='post' action='$self' onSubmit="return confirm('确定删除?')" style="float:left;margin-left:5px;">
+    <input class='imagebutton' type='image' name='%s' src='/images/delete.png' alt='%s' title='%s'>
+    <input type="hidden" name="ACTION" value="delete">
+    <input type="hidden" name="username" value="$user">
+</form>
+
+
+</td>
+</tr>
+EOF
+,
+_('Really delete the VPN client %s?', $user),	
+_('Edit'),
+_('Edit'),
+_('Edit'),
+_('Remove'),
+_('Remove'),
+_('Remove'),
+;
+}
+#END
+	$i++;
+    }
+}else{
+	no_tr(5,_('Current no content'));
+}
+
+
+printf <<END
+
+
+</table>
+END
+;
+
+if($length >0)
+{
+printf <<END
+<table cellpadding="0" cellspacing="0" class="list-legend">
+<tr>
+        <td><b>%s</b>
+        <img src='/images/on.png' alt='%s' >
+        %s
+        <img src='/images/off.png' alt='%s' />
+        %s
+        <img src='/images/edit.png' alt='%s' >
+        %s
+        <img src='/images/delete.png' alt='%s' >
+        %s</td>
+END
+,
+_('Legend'),
+_('Enabled (click to disable)'),
+_('Enabled (click to disable)'),
+_('Disabled (click to enable)'),
+_('Disabled (click to enable)'),
+_('Edit'),
+_('Edit'),
+_('Remove'),
+_('Remove')
+;
+#显示跳转以及上下页翻页 殷其雷 2013-3-7
+printf <<END
+        <td>
+		<div>
+<table width='100%' align='center' border="0">
+	<tr>
+	<td width='2%' align='right'>
+END
+;
+	if ($last > 0 ) {
+printf <<END
+	<form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+	<input type="hidden" name="OFFSET" value="1">
+    <input class='submitbutton' type="image" title='%s' name="ACTION" src="/images/first-page.png">
+	</form>
+END
+,
+_('First page')
+;
+    } else {
+
+	print "<input class='submitbutton' type='image' name='ACTION' title='"._('First page')."' src='/images/first-page-off.png'>";
+    }
+    print "</td><td width='2%'>\n";
+	if ($last > 0) {
+printf <<END
+	<form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+    <input type="hidden" name="OFFSET" value="$last">
+    <input class='submitbutton' type="image" name="ACTION" title='%s' src="/images/last-page.png">
+	</form>
+END
+,
+_('Last page')
+;
+    }
+	else {
+
+	print "<input class='submitbutton' type='image' name='ACTION' title='"._('Last page')."' src='/images/last-page-off.png'>";
+    }
+	printf <<END
+		<td  align='center'>%s</td>
+		<td  align='center'>%s</td>
+END
+,
+_('Total %s pages',$total),
+_('Current %s page',$offset),
+;
+
+    print "<td width='2%' align='right'>";
+    if (!($next > $total)) {
+printf <<END
+	<form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+    <input type="hidden" name="OFFSET" value="$next">
+    <input class='submitbutton' type="image" name="ACTION" title='%s' src="/images/next-page.png">
+	</form>
+END
+,
+_('Next page')
+;
+    } else {
+	print "<input class='submitbutton' type='image' name='ACTION' title='"._('Next page')."' src='/images/next-page-off.png'>";
+    }
+	print "</td><td width='2%'>\n";
+	 if (!($next > $total)) {
+printf <<END
+	<form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+	<input type="hidden" name="OFFSET" value="$total">
+    <input class='submitbutton' type="image" name="ACTION" title='%s' src="/images/end-page.png">
+    </form>
+END
+,
+_('End page')
+;
+    } else {
+	print "<input class='submitbutton' type='image' name='ACTION' title='"._('End page')."' src='/images/end-page-off.png'>";
+    }
+    printf <<END
+		</td>	
+		<form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+		<td  align='right' >%s: <input type="text" SIZE="2" name='OFFSET' VALUE="$offset"></td>
+		<td  align='center'><input class='submitbutton' type='submit' name='ACTION' value='%s' /></td>
+		</form>
+		<form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+		<td  align='center'><input class='submitbutton' type='submit' name='ACTION' value='下载全部用户' /></td>
+		</form>
+</tr>
+</table>
+	</div>
+	</td>
+	</tr>
+	</table>
+END
+,_('Jump to Page')
+,_('Go')
+;
+#END
+}
+
+    #closebox();
+
+}
+
+# -------------------------------------------------
+# EDIT ACCOUNT
+# -------------------------------------------------
+
+sub show_set($$) {
+    my $username = shift;
+    my $action = shift;
+
+    my @split = ();
+    my $password = '';
+    if ($action eq 'set') {
+      	&openeditorbox(_('编辑用户'), "","showeditor", "createrule", @errormessages);
+      	@split = split(/:/, `$passwd getuser "$username"`);
+      	$password = '_NOTCHANGED_';
+      	$buttontext = _('Update');
+    } 
+    else {
+  		my $text;
+      $username = "";
+  		if ($errormessage) {
+        $text='showeditor';
+      }
+  	  &openeditorbox(_('添加用户'), "","$text", "createrule", @errormessages);
+  	  $password = '';
+  	  $buttontext = _('Add');
+    }
+
+    $checked{'setred'}{$setred} = ' ';
+    if ($split[1] eq 'setred') {
+	     $checked{'setred'}{$setred} = "checked='checked'";
+    }
+
+    $checked{'setorange'}{$setorange} = '';		
+    if ($split[2] eq 'setorange') {
+	     $checked{'setorange'}{$setorange} = "checked='checked'";	
+    }
+
+    $checked{'setblue'}{$setblue} = '';		
+    if ($split[3] eq 'setblue') {
+	$checked{'setblue'}{$setblue} = "checked='checked'";	
+    }
+
+    my $remotenets = $split[4];
+    $remotenets =~ s/,/\n/g;
+    chomp($remotenets);
+
+    $checked{'dontpushroutes'}{$dontpushroutes} = ' ';
+    if ($split[5] eq 'on') {
+	$checked{'dontpushroutes'}{$dontpushroutes} = "checked='checked'";
+    }
+
+    my $explicitroutes = $split[6];
+    $explicitroutes =~ s/,/\n/g;
+    chomp($explicitroutes);
+
+    my $static_ip = $split[7];;
+    $static_ip =~ s/,/\n/g;
+    chomp($static_ip);
+
+    my $custom_dns = $split[8];
+    $custom_dns =~ s/,/\n/g;
+    chomp($custom_dns);
+
+    my $custom_domain = $split[9];
+
+    if ($split[10] =~ /on/) {
+	$checked{'push_custom_dns'}{$push_custom_dns} = "checked='checked'";
+    }
+    if ($split[11] =~ /on/) {
+	$checked{'push_custom_domain'}{$push_custom_domain} = "checked='checked'";
+    }
+
+    my $usernamelabel = _('Username');
+    if ($config->{'AUTH_TYPE'} eq 'cert') {
+        $usernamelabel = _('Common name');
+    }
+####help_msg
+	my $help_hash1 = read_json("/home/httpd/help/openvpn_users_help.json","openvpn_users.cgi","通过vpn引导客户流量","-10","30","down");
+	my $help_hash2 = read_json("/home/httpd/help/openvpn_users_help.json","openvpn_users.cgi","networt_behind_client","-10","30","down");
+	my $help_hash3 = read_json("/home/httpd/help/openvpn_users_help.json","openvpn_users.cgi","push_only_these_net","-10","30","down");
+	my $help_hash4 = read_json("/home/httpd/help/openvpn_users_help.json","openvpn_users.cgi","推送域名服务器","-10","30","down");
+	my $help_hash5 = read_json("/home/httpd/help/openvpn_users_help.json","openvpn_users.cgi","推送域","-10","30","down");
+	###
+    printf <<EOF
+    </form>
+     <form name="USER_FORM" method="post" ACTION="$ENV{'SCRIPT_NAME'}" class="inline">
+<table border='0' cellspacing="0" cellpadding="4">
+<tr class="env">
+  <td class="add-div-table" rowspan="3"><b>%s</b></td>
+  <td>%s *</td>
+EOF
+, _('Account information')
+, $usernamelabel
+;
+
+    if ($action ne 'set') {
+	printf <<EOF
+  <td><input type='text' name='username' value='' /></td>
+EOF
+;
+    } else {
+	printf <<EOF
+  <td><input type='text' name='usernamedisabled' value='$username' disabled /> <input type='hidden' name='username' value='$username' /></td>
+ 
+EOF
+;
+    }
+
+
+    my $defaultpw = '_NOTCHANGED_';
+    if ($action ne 'set') {
+	$defaultpw = '';
+    }
+    if ($config->{'AUTH_TYPE'} ne 'cert') {
+        printf <<EOF
+<tr class="env">
+  <td >%s *</td>
+  <td><input type='password' name='password' value='$defaultpw' /></td>
+</tr>
+<tr class="env">
+  <td>%s *</td>
+  <td><input type='password' name='password2' value='$defaultpw' /></td>
+</tr>
+EOF
+, _('Password')
+, _('Verify password')
+;
+    } else {
+        printf <<EOF
+<input type='hidden' name='password' value='_NOTCHANGED_' />
+<input type='hidden' name='password2' value='_NOTCHANGED_' />
+EOF
+;
+    }
+
+    printf <<EOF
+
+
+<tr class="odd">
+  <td class="add-div-table" rowspan="5">%s</td>
+  <td class="need_help">%s $help_hash1</td>
+  <td ><input type="checkbox" name="setred" value="set" $checked{'setred'}{$setred}></td>
+</tr>
+
+<tr class="odd">
+  <td>%s</td>
+  <td><input type="checkbox" name="dontpushroutes" value="on" $checked{'dontpushroutes'}{$dontpushroutes}></td>
+</tr>
+EOF
+, _('Client routing')
+, _('通过VPN服务器引导用户流量')
+, _("Push only global options to this client")
+;
+
+       if (blue_used()) {
+           printf <<EOF
+<tr class="odd">  
+   <td>%s</td>
+   <td><input type="checkbox" name="setblue" value="set" $checked{'setblue'}{$setblue}></td>
+</tr>
+EOF
+,_('Push route to blue zone')
+;
+        }
+
+       if (orange_used()) {
+           printf <<EOF
+<tr class="odd">
+  <td>%s</td>
+  <td><input type="checkbox" name="setorange" value="set" $checked{'setorange'}{$setorange}></td>
+</tr>
+EOF
+,_('Push route to orange zone')
+;
+       }
+
+
+printf <<EOF
+<tr  class="odd">
+  <td class="need_help">%s $help_hash2</td>
+  <td>
+    <textarea cols="17" rows="2" name='remotenets'>$remotenets</textarea>
+  </td>
+</tr>
+
+<tr  class="odd">
+  <td class="need_help" width="300px">%s $help_hash3
+  </td>
+  <td>
+    <textarea cols="17" rows="2" name='explicitroutes'>$explicitroutes</textarea>
+  </td>
+</tr>
+
+</table>
+<table border="0" cellspacing="0" cellpadding="4" width="100%">
+
+<tr class="env" >
+  <td class="add-div-table" rowspan="3"><b>%s</b></td>
+  <td width="300px">%s</td>
+  <td>
+    <textarea cols="17" rows="2" name='static_ip'>$static_ip</textarea>
+  </td>
+</tr>
+
+<tr  class="env" >
+  <td class="need_help">%s $help_hash4</td>
+  <td>
+    <ul><li><input type='checkbox' name='push_custom_dns' value='on' $checked{'push_custom_dns'}{$push_custom_dns}>&nbsp;%s</input></li>
+    <li><textarea cols="17" rows="2" name='custom_dns'>$custom_dns</textarea></li></ul>
+  </td>
+</tr>
+
+<tr  class="env" >
+  <td class="need_help">%s $help_hash5</td>
+    <td valign="top">
+      <ul><li><input type='checkbox' name='push_custom_domain' value='on' $checked{'push_custom_domain'}{$push_custom_domain}>&nbsp;%s</input></li>
+      <li><input type="text" name='custom_domain' value="$custom_domain" /></li></ul>
+    </td>
+</tr>
+
+
+
+</table>
+
+<input type='hidden' name='ACTION' value='$action' />
+		
+EOF
+
+,_('远程网络')
+,_('只推送这些网络到客户端')
+,_('Custom push configuration')
+,_('Static ip addresses')
+,_('Push these nameservers')
+,_('Enable')
+,_('Push domain')
+,_('Enable')
+
+,_('Save')
+;
+
+    &closeeditorbox($buttontext, _("Cancel"), "routebutton", "createrule", $ENV{'SCRIPT_NAME'});
+
+}
+
+
+sub cracklib($$) {
+    my $password = shift;
+    my $password1 = shift;
+
+    if ($password !~ /^[A-Za-z0-9_]+$/) {
+		return (0, _('Invalid characters in password.'));
+    }
+    if ($password ne $password1) {
+		return (0, _('passwords are not identical'));
+    }
+    if (length($password) < 6 || length($password) > 32) {
+		return (0, _('密码长度不正确，只能输入6至32个字符!'));
+    }
+    return 1;
+
+}
+
+sub sanitize($) {
+    my $data = shift;
+    $data =~ s/\"/\\\"/;
+    return $data;
+}
+
+sub disable_user ($) {
+    my $user = shift;
+    `$passwd set \"$user\" --toggle='disable' --rewrite-users`;
+	`sudo fcmd "$passwd set \"$user\" --toggle"`;	
+#`sudo fmodify "/var/efw/openvpn/passwd"`;
+}
+
+sub enable_user ($) {
+    my $user = shift;
+    `$passwd set \"$user\" --toggle='enable' --rewrite-users`;
+	`sudo fcmd "$passwd set \"$user\" --toggle"`;	
+	#`sudo fmodify "/var/efw/openvpn/passwd"`;
+}
+
+sub checkuser() {
+    if ($username =~ /^$/) {
+		$errormessage = _('用户名不能为空.');
+		return 0;
+    }
+    if ($username !~ /^[A-Za-z0-9\.\-_@]+$/) {
+		$errormessage = _('Username "%s" contains invalid characters.', $username);
+		return 0;
+    }
+	if (length($username) < 4 || length($username) > 20) {
+		$errormessage = _('用户名长度不正确，只能输入4至20个字符!');
+		return 0;
+    }
+    return 1;
+}
+
+sub getStaticIPs() {
+    my %hash;
+    my $ret = \%hash;
+
+    my @users = split(/\n/, `$passwd longlist`);
+    foreach my $line (@users) {
+      	my @split = split(/:/, $line);
+      	my $user = $split[0];
+      	my $staticips = $split[8];
+      	foreach my $ip (split(/,/, $staticips)) {
+      	    $ret->{$ip} = $user;
+      	}
+    }
+    return $ret;
+}
+
+sub checkvalues() {
+
+    my $remotenets = $par{'remotenets'};
+    my $explicitroutes = $par{'explicitroutes'};
+    my $custom_dns = $par{'custom_dns'};
+    my $static_ip = $par{'static_ip'};
+    my $custom_domain = $par{'custom_domain'};
+
+    if ($remotenets) {
+		my ($ok, $nok) = checkIPs($remotenets, 32);
+		if ($nok ne '') {
+			$errormessage = _('Networks behind client "%s" are invalid', $nok);
+			return 0;
+		}
+    }
+    if ($explicitroutes) {
+		my ($ok, $nok) = checkIPs($explicitroutes, 32);
+		if ($nok ne '') {
+			$errormessage = _('Networks to be pushed "%s" are invalid', $nok);
+			return 0;
+		}
+    }
+    if ($custom_dns) {
+		my @dnss = split(/[\r\n,]/, $custom_dns);
+		foreach my $elem (@dnss) {
+			if (!&validdomainname($elem)) {
+				$errormessage = _('Custom nameserver addresses "%s" are invalid', $elem);
+				return 0;
+			}
+			if (length($elem) > 67) {
+				$errormessage = _('域名服务器 "%s" 太长，必须小于等于67字符', $elem);
+				return 0;
+			}
+		}
+    }
+    if ($custom_domain) {
+		if (! validdomainname($custom_domain)) {
+			$errormessage = _('Domain name to be pushed "%s" is invalid', $custom_domain);
+			return 0;
+		}
+    }
+
+    my $remoteips = getStaticIPs();
+    if ($static_ip) {
+	my ($ok, $nok) = checkIPs($static_ip, 33);
+	if ($nok ne '') {
+	    $errormessage = _('Static ip addresses "%s" are invalid', $nok);
+	    return 0;
+	}
+
+	my $ether;
+	if (-e $etherconf) {
+	    $ether = readconf($etherconf);
+	}
+
+	my $openvpn;
+	if (-e $openvpnconf) {
+	    $openvpn = readconf($openvpnconf);
+	    
+	}
+	my $purple_begin_long = ip2long($openvpn->{PURPLE_IP_BEGIN});
+	my $purple_end_long = ip2long($openvpn->{PURPLE_IP_END});
+
+
+	foreach my $ipcidr (split(/[\r\n,]/, $static_ip)) {
+	    my ($ip, $cidr) = split(/\//, $ipcidr);
+	    if ($ip eq $ether->{GREEN_BROADCAST}) {
+			$errormessage = _('Static ip address "%s" can\'t be same as broadcast ip of VPN segment "%s".', $ip, $b);
+			return 0;
+	    }
+	    if ($ip eq $ether->{GREEN_NETADDRESS}) {
+			$errormessage = _('Static ip address "%s" can\'t be same as network ip of VPN segment "%s".', $ip, $a);
+			return 0;
+	    }
+	    if ($ip eq $ether->{GREEN_ADDRESS}) {
+			$errormessage = _('Static ip address "%s" can\'t be same as GREEN ip address', $ip);
+			return 0;
+	    }
+	    if ($remoteips->{$ip} && ($remoteips->{$ip} ne $username)) {
+			$errormessage = _('Static ip address "%s" is already assigned to user "%s"!', $ip, $remoteips->{$ip});
+			return 0;
+	    }
+	    my $longip = ip2long($ip);
+	    if (($longip >= $purple_begin_long) && ($longip <= $purple_end_long)) {
+			$errormessage = _('Static ip address "%s" can\'t be part of dynamic ip pool %s - %s!', 
+					  $ip, $openvpn->{PURPLE_IP_BEGIN}, $openvpn->{PURPLE_IP_END});
+			return 0;
+	    }
+	}
+    }
+
+    return 1;
+}
+
+sub nl2coma($) {
+    my $string = shift;
+    my $ret = '';
+    foreach my $item (split(/[\n\r]/, $string)) {
+	next if ($item =~ /^$/);
+	$ret .= ','.$item;
+    }
+    $ret =~ s/^,//;
+    return $ret;
+}
+
+sub setdirty($$) {
+    my $username = shift;
+    my $remotenets = shift;
+    my @split = split(/:/, `$passwd getuser "$username"`);
+    my $oldremotenets = $split[4];
+    makedirty();
+    return if ($remotenets eq $oldremotenets);
+}
+
+sub makedirty() {
+    `touch $dirtyfile`;
+}
+
+
+
+##导入用户及下载模板 殷其雷 2013-3-8
+sub display_add(){
+    &openuploadbox(_('导入用户'), "", "uploaduser", @errormessages);
+	printf <<EOF
+     <table width="100%" cellpadding="0" cellspacing="0">
+	 <tr class="odd"><td class="add-div-type">导入用户</td>
+	 <td style="width:260px">
+	 <form enctype='multipart/form-data' method='post' action='$ENV{SCRIPT_NAME}' onsubmit="return check_upload_file();">
+	 <input type="file" name="up_file" style="width:200px" />
+	 <input type="submit" name="submit" value="上传" style="width:40px" >
+	 <input type='hidden' name='ACTION' value='upload'>
+	 </form>
+	 </td>
+	 <td align='left'>
+	 <form enctype='multipart/form-data' method='post' action='$ENV{'SCRIPT_NAME'}'>
+	 <input type="submit" value="下载模板" style="width:60px"><input type="hidden" name='ACTION' value="download" />
+	 </form>
+	 </td>
+	 </tr>
+	 </table>
+EOF
+;
+    &closeuploadbox();
+}
+
+sub uploads($$){
+	my $uploadname = shift;
+	my $upload_dir = shift;
+	my $file_length = 0;
+	my $upload_filehandle = $cgi->upload('up_file');
+	my $upload_filename = $upload_filehandle;
+	my @splited_filenames = split(/\./, $upload_filename);
+	foreach my $splited_filename (@splited_filenames)
+	{
+	   $file_length++;
+	}
+	if($file_length == 0)
+	{
+	   $errormessage = '请选择一个xls文件再上传！';
+	} else {
+	   $file_length--;
+	   if ($splited_filenames[$file_length] eq 'xls')
+	   {
+	       my $filename = "/tmp/temp.xls";
+	       open ( UPLOADFILE, ">$filename" ) or die "$!";
+	       binmode UPLOADFILE;
+	       while ( <$upload_filehandle> )
+ 	      {
+		      print UPLOADFILE;
+	      }
+	      close UPLOADFILE;
+		  #`perl openvpn_users_upload.pl`;
+		  system('perl openvpn_users_upload.pl &');
+		  $notemessage = "数据已成功上传，正在后台处理，不符合要求及重复的数据会自动过滤。处理阶段此页面无法操作，请耐心等待一段时间后手动刷新此页面，数据全部出现之前不要上传新数据以免丢失。";
+	   } else {
+	      $errormessage = '只支持处理xls文件！';
+	   }
+	}
+}
+
+sub openuploadbox($$$$@) {
+    my $linktext = shift;
+    my $show = shift;
+    my $linkname = shift;
+    my @errormessages = @_;
+    my $disp_editor = "none";
+    my $disp_link = "";
+    if ($show eq "showeditor" || $#errormessages ne -1) {
+        $disp_link = "none";
+        $disp_editor = "";
+    }
+
+    if ($linktext ne "") {
+        printf <<EOF
+    <div id="add-div_upload" >
+
+     <div id="add-div-header_upload">
+<span style="display:block;float:left;margin:0px auto auto 5px;"><img src="/images/add.png" />&nbsp;$linktext</span></div>
+EOF
+        ;
+    }
+    printf <<EOF
+   <div id="add-div-content_upload"  style="display:$disp_editor;">
+EOF
+;
+
+    if ($#errormessages ne -1) {
+        printf <<EOF
+        <div class="editorerror" name="$linkname">
+            <div>
+                <ul style="padding-left: 20px">
+EOF
+        ;
+        foreach my $errormessage (@errormessages) {
+            printf <<EOF
+                    <li style="color: red;">
+                        <font color="red">$errormessage</font>
+                    </li>
+EOF
+            ;
+        }
+        printf <<EOF
+                </ul>
+            </div>
+            <hr size="1" color="#cccccc">
+        </div>
+EOF
+        ;
+    }
+    ;
+}
+
+sub closeuploadbox {
+
+    printf <<EOF 
+    <table width="100%" cellpadding="0" cellspacing="0" style="font-size:12px;">
+    <tr class="add-div-footer"><td width="50%">	</td><td width="50%" align="right">*请严格按照模板创建新用户数据，只支持处理xls表格。</td></tr>
+	</table>
+	</form>     
+    </div>  </div>	
+EOF
+;
+}
+
+sub download_all {
+    my $file = '/tmp/all_users.xls';
+    my @users = split(/\n/, `$passwd longlist`);
+	my $row_num = 1;
+	my $sheetName = 'My sheet';
+	my $book = new Spreadsheet::WriteExcel( $file );
+	my $sheet = $book->add_worksheet( $sheetName );
+	$sheet->write(0, 0, 'Username');
+	$sheet->write(0, 1, 'Password');
+	foreach my $line (@users) {
+	   my @split = split(/:/, $line); 
+	   $sheet->write($row_num, 0, $split[0]);
+	   $sheet->write($row_num, 1, '******');
+	   $row_num++;
+	}
+	$book->close();
+	return $file;
+} 
+
+sub make_module {
+    my $file = '/tmp/module.xls';
+    my @users = split(/\n/, `$passwd longlist`);
+	my $sheetName = 'My sheet';
+	my $book = new Spreadsheet::WriteExcel( $file );
+	my $sheet = $book->add_worksheet( $sheetName );
+	$sheet->write(0, 0, 'Username');
+	$sheet->write(0, 1, 'Password');
+	$sheet->write(1, 0, 'User1');
+	$sheet->write(1, 1, 'User1_password');
+	$sheet->write(2, 0, 'User2');
+	$sheet->write(2, 1, 'User2_password');
+	$sheet->write(3, 0, 'User3');
+	$sheet->write(3, 1, 'User3_password');
+	$sheet->write(4, 0, 'User4');
+	$sheet->write(4, 1, 'User4_password');
+	$book->close();
+	return $file;
+}
+#END
+
+sub doaction() {
+    if(!$action) 
+	{
+		return;
+    }
+
+    if ($action eq 'delete') 
+	{
+		if (!checkuser()) 
+		{
+            return;
+		}
+		system("$passwd del \"$username\"");
+		`sudo fcmd "$passwd del $username"`;	
+		#`sudo fmodify "/var/efw/openvpn/passwd"`;
+		$notemessage = _('User \'%s\' successfully deleted', $username);
+		#删除成功后清空动作
+		$par{'ACTION'} = '';
+	    $action = '';
+		return;
+    }
+
+    if(($action eq 'add') ||(($action eq 'set')))
+	{
+
+		if (!checkuser()) 
+		{
+			return;
+		}
+	
+		if(!checkvalues()) 
+		{
+			return;
+		}
+
+	    my $pass1 = $par{'password'};
+	    my $pass2 = $par{'password2'};
+
+	    my $remotenets = nl2coma($par{'remotenets'});
+	    my $explicitroutes = nl2coma($par{'explicitroutes'});
+	    my $custom_dns = nl2coma($par{'custom_dns'});
+	    my $static_ip = nl2coma($par{'static_ip'});
+	    my $custom_domain = $par{'custom_domain'};
+
+	    $remotenets = 'None' if ($remotenets eq '');
+	    $explicitroutes = 'None' if ($explicitroutes eq '');
+	    $custom_dns = 'None' if ($custom_dns eq '');
+	    $custom_domain = 'None' if ($custom_domain eq '');
+	    $static_ip = 'None' if ($static_ip eq '');
+
+	    $setred = 'on';
+	    $setblue = 'on';
+	    $setorange = 'on';
+	    $setred = 'off' if ($par{'setred'} ne 'set');
+	    $setblue = 'off' if ($par{'setblue'} ne 'set');
+	    $setorange = 'off' if ($par{'setorange'} ne 'set');
+	    $par{'dontpushroutes'} = 'off' if ($par{'dontpushroutes'} ne 'on');
+
+	    my $push_custom_domain = 'on';
+	    my $push_custom_dns = 'on';
+	    $push_custom_domain = 'off' if ($par{'push_custom_domain'} ne 'on');
+	    $push_custom_dns = 'off' if ($par{'push_custom_dns'} ne 'on');
+
+	    ($err, $errormessage) = cracklib($pass1, $pass2);
+
+	    if ($err) {
+	        setdirty($username, $remotenets);
+
+	        $cmd = "$passwd set \"$username\" --password \"$pass1\"";
+	        $cmd .= " --dns=$custom_dns";
+	        $cmd .= " --domain=$custom_domain";
+	        $cmd .= " --static-ips=$static_ip";
+	        $cmd .= " --dont-push-routes $par{'dontpushroutes'}";
+	        $cmd .= " --explicit-routes $explicitroutes";
+	        $cmd .= " --networks $remotenets";
+	        $cmd .= " --route-blue $setblue";
+	        $cmd .= " --route-orange $setorange";
+	        $cmd .= " --route-red $setred";
+	        $cmd .= " --push-domain=$push_custom_domain";
+	        $cmd .= " --push-dns=$push_custom_dns";
+
+            system("$cmd --rewrite-users");
+			#`sudo fmodify "/var/efw/openvpn/passwd"`;
+			`sudo fcmd "$cmd --rewrite-users"`;
+			
+	        # kill the user in order to enforce the configuration change.
+            system("$passwd kill \"$username\"");
+			`sudo fcmd "$passwd kill $username"`;
+	        $notemessage = _("Account \"%s\" successfully", $username);
+		    #添加\设置成功后清空动作
+		    $par{'ACTION'} = '';
+	        $action = '';
+	    }
+	    return;
+    }
+    
+    if ($action eq 'enable') {
+	   if (!checkuser()) {
+	      return;
+	   }
+
+	   enable_user($username);
+	   #启用成功后清空动作
+	   $par{'ACTION'} = '';
+	   $action = '';
+	   return;
+    }
+    
+    if ($action eq 'disable') {
+	   if (!checkuser()) {
+	      return;
+	   }
+
+	   disable_user($username);
+	   #禁用成功后清空动作
+	   $par{'ACTION'} = '';
+	   $action = '';
+	   return;
+    }
+	
+	#下载及上传用户 殷其雷 2013-3-8
+	if ($action eq 'download') {
+	    my $file = make_module();
+		if( -e "$file"){
+			open(DLFILE, "<$file") || Error('open', "$file");  
+			@fileholder = <DLFILE>;  
+			close (DLFILE) || Error ('close', "$file"); 
+			print "Content-Type:application/x-download\n";  
+			print "Content-Disposition:attachment;filename=$file\n\n";
+			print @fileholder;
+			exit;
+		}
+		else{
+            print "Content-type:text/html\n\n";
+            print qq{<html><head><title>The file doesn't exist.</title></head><body><br/><br/>
+                <br/><center><h1>The file does not exist.</h1></center></body></html>};
+            exit;
+		}
+		#应用成功后清空动作
+		$par{'ACTION'} = '';
+	    $action = '';
+	}
+	
+	if ($action eq '下载全部用户') {
+	   my $file = download_all();
+	   if( -e "$file"){
+			open(DLFILE, "<$file") || Error('open', "$file");  
+			@fileholder = <DLFILE>;  
+			close (DLFILE) || Error ('close', "$file"); 
+			print "Content-Type:application/x-download\n";  
+			print "Content-Disposition:attachment;filename=$file\n\n";
+			print @fileholder;
+			exit;
+		}
+		else{
+            print "Content-type:text/html\n\n";
+            print qq{<html><head><title>The file doesn't exist.</title></head><body><br/><br/>
+                <br/><center><h1>The file does not exist.</h1></center></body></html>};
+            exit;
+		}
+	   #应用成功后清空动作
+	   $par{'ACTION'} = '';
+	   $action = '';
+	}
+	
+	if ($action eq 'upload') {
+	   $uploadname='temp';
+	   $dir = "/tmp";
+	   uploads($uploadname,$dir);
+	   #应用成功后清空动作
+	   $par{'ACTION'} = '';
+	   $action = '';
+	}
+	
+	#END
+	
+}
+
+getcgihash(\%par);
+$action = $par{'ACTION'};
+
+# -------------------------------------------------------------
+# action to do?
+# -------------------------------------------------------------
+
+
+$username = sanitize($par{'username'});
+
+# -------------------------------------------------------------
+# ouput page
+# -------------------------------------------------------------
+doaction();
+showhttpheaders();
+
+$extraheader .= "<script type='text/javascript'> 
+  \$(document).ready(function(){
+	\$('#add-div-header_upload').click(function(){
+            if(\$('#add-div-content_upload').css('display')=='none')
+			{
+				\$('#add-div-content_upload').slideDown('1000');
+				\$('#add-div-header_upload img').attr('src','/images/del.png');
+			}else{
+				\$('#add-div-content_upload').slideUp('1000');
+				\$('#add-div-header_upload img').attr('src','/images/add.png');
+			}
+        });
+	function upload_wait() {
+	    
+	}
+});
+ function check_upload_file() {
+    var label=false;
+    var file = document.getElementsByName('up_file')[0];
+    if(file.value)
+    {
+	   var filename_splited = file.value.split('.');
+	   if(filename_splited[1]=='xls')
+	   {
+	      label=true;
+	   }
+	   else
+	   {
+	      alert('只支持处理xls文件！');
+	      label=false;
+	   }
+	}
+    else
+    {
+	  alert('请选择文件');
+	}
+    return label;
+ }</script>";
+
+$extraheader .= "<style type='text/css'>
+#add-div_upload{
+width:96%;
+margin:20px auto;
+border:1px solid #DDD;
+height:auto;
+}
+
+#add-div-header_upload{
+width:100%;
+padding-top:2px;
+height:25px;
+line-height:25px;
+background-image:url(../images/con-header-bg.jpg);
+border-bottom:1px solid #999;
+font-size:13px;
+color:#192027;
+font-weight:bold;
+cursor:pointer;
+}
+
+#add-div-header_upload img{
+display:block;
+float:left;
+margin:5px 0px -5px 5px;
+cursor:pointer;
+}
+
+#add-div-content_upload{
+width:100%;
+}
+
+#add-div-content_upload table{
+width:100%;
+}
+
+#add-div-content_upload >table>tr>td{
+border-bottom:1px solid #AAA;
+height:30px;
+line-height:30px;
+font-size:12px;
+}
+</style>";
+openpage($name, 1,$extraheader);
+sleep(2);
+openbigbox($errormessage,"", $notemessage);
+if (-e $dirtyfile) {
+    $warnmessage = _('Configuration has been changed.You may need to restart openVPN server in order to make the changes active.Clients will reconnect automatically after the restart.');
+	applybox($warnmessage);
+}
+#当不存在动作时默认给action赋值add
+if (!$par{'ACTION'} ) {
+	$action = 'add';
+}
+show_set($username, $action);
+display_add();
+list_users();
+&check_form();
+closebigbox();
+closepage();
