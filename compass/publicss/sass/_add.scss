@@ -29,8 +29,7 @@ table {
 }
 .popup-mesg-box-body {
     @include stretch($offset-top: 44%,$offset-left: 50%);
-    // @include transform(translate(-50%, -50%));
-    width: 80%;
+    @include set_size(100%,max-content);
     max-height: 520px;
     border: none;
     z-index: 60;
@@ -174,7 +173,9 @@ table {
     min-width:70px;
     height:24px;
 }
-
+.add_panel_header_move{
+    @include hover(move);
+}
 .waggle-swing{
     @include animation(wobble 1s .2s ease both);
 }

@@ -56,7 +56,7 @@ RuleAddPanel.prototype.init_panel_config = function(panel_config) {
     /* 定义面板是否可拖拽 */
     rule_add_panel.panel_config.is_popup_tip = panel_config.is_popup_tip !== undefined ? panel_config.is_popup_tip : true;
     /* 定义面板是否可拖拽 */
-    rule_add_panel.panel_config.is_panel_draggable = panel_config.is_panel_draggable !== undefined ? panel_config.is_panel_draggable : false;
+    rule_add_panel.panel_config.is_panel_draggable = panel_config.is_panel_draggable !== undefined ? panel_config.is_panel_draggable : true;
     /*定义面板是否有透明边框*/
     rule_add_panel.panel_config.border_transparent = panel_config.border_transparent !== undefined ? panel_config.border_transparent : false;
     /* 定义页脚按钮 */
@@ -528,23 +528,28 @@ RuleAddPanel.prototype.add_listener_to_panel_header = function() {
             document.onmousemove = function(ev) {
                 $('.popup-tip').hide()　　　　
                 var oevent = ev || event;
-                var ele_left = oevent.clientX - distanceX;
-                var ele_left_down = document.body.scrollWidth - panel_container_father.offsetWidth - 20;
-                var ele_top = oevent.clientY - distanceY;
-                var ele_top_down = document.body.scrollHeight - panel_container_father.offsetHeight - 40;
-                if (ele_left < 0) {
-                    ele_left = 0;
+
+                var marginLeft = Number( panel_container_father.style.marginLeft.replace('px',''));
+                var marginTop = Number( panel_container_father.style.marginTop.replace('px',''));
+
+                var ele_left = oevent.clientX - distanceX -marginLeft;
+                var ele_left_down = document.body.scrollWidth - panel_container_father.offsetWidth - 20- marginLeft;
+                var ele_top = oevent.clientY - distanceY -marginTop;
+                var ele_top_down = document.body.scrollHeight - panel_container_father.offsetHeight - 40 - marginTop;
+
+                if (ele_left < -marginLeft) {
+                    ele_left = -marginLeft;
                 } else if (ele_left > ele_left_down) {
                     ele_left = ele_left_down;
                 }
-                if (ele_top < 0) {
-                    ele_top = 0
+                if (ele_top < -marginTop) {
+                    ele_top = -marginTop
                 } else if (ele_top > ele_top_down) {
                     ele_top = ele_top_down;
                 }
-　　　
-                panel_container_father.style.left = ele_left + 'px';　　　　
-                panel_container_father.style.top = ele_top + 'px';　　　　
+　　　　　　
+                panel_container_father.style.left = ele_left  + 'px';　　　　
+                panel_container_father.style.top = ele_top  + 'px';　　　　
             };　　　　
             document.onmouseup = function() {　　　　　　
                 document.onmousemove = null;　　　　　　
@@ -1107,6 +1112,9 @@ RuleAddPanel.prototype.show = function() {
         'margin-left': -($(check_in_selector).children('.popup-mesg-box-body').width()/2)+'px',
         'margin-top': -($(check_in_selector).children('.popup-mesg-box-body').height()/2)+'px'
     });
+    $('#'+panel_config.check_in_id).children('.popup-mesg-box-cover').on('click', function() {
+        rule_add_panel.cancel_edit_box();
+    })
 	if(panel_config.is_modal){
 		// setTimeout(function() {
 		// 	document.getElementById(box_cover_id).setAttribute('class','open-dialog__overlay');
