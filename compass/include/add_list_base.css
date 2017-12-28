@@ -19,204 +19,6 @@
  * BASE
  * 
  */
-/* line 64, other/*.png */
-.other-sprite, .other-logo, .other-manager_controll, .other-warnning_lamp {
-  background-image: url('../images/other-s61a7760320.png');
-  background-repeat: no-repeat;
-}
-
-/* line 80, top/*.png */
-.top-sprite, .top-change_pwd, .top-help, .top-reboot_sys, .top-shutdown, .top-user {
-  background-image: url('../images/top-sd1acb12554.png');
-  background-repeat: no-repeat;
-}
-
-/* line 264, list_panel/*.png */
-.list_panel-sprite, .list_panel-add16x16, .list_panel-add_rule, .list_panel-delete, .list_panel-delete_rule, .list_panel-disable_rule, .list_panel-edit, .list_panel-enable_rule, .list_panel-end-page-off, .list_panel-first-page-off, .list_panel-last-page-off, .list_panel-move_down, .list_panel-move_down_disabled, .list_panel-move_up, .list_panel-move_up_disabled, .list_panel-next-page-off, .list_panel-next, .list_panel-off, .list_panel-on, .list_panel-on_blue, .list_panel-previous, .list_panel-refresh, .list_panel-search16x16, .list_panel-to_bottom, .list_panel-to_bottom_disabled, .list_panel-to_end, .list_panel-to_first, .list_panel-to_top, .list_panel-to_top_disabled {
-  background-image: url('../images/list_panel-s126cd572ca.png');
-  background-repeat: no-repeat;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.top-change_pwd {
-  background-position: 0 0;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.top-help {
-  background-position: 0 -30px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.top-reboot_sys {
-  background-position: 0 -60px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.top-shutdown {
-  background-position: 0 -90px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.top-user {
-  background-position: 0 -120px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-logo {
-  background-position: 0 0;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-manager_controll {
-  background-position: 0 -50px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-warnning_lamp {
-  background-position: 0 -69px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-add16x16 {
-  background-position: 0 0;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-add_rule {
-  background-position: 0 -14px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-delete {
-  background-position: 0 -28px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-delete_rule {
-  background-position: 0 -43px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-disable_rule {
-  background-position: 0 -58px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-edit {
-  background-position: 0 -73px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-enable_rule {
-  background-position: 0 -90px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-end-page-off {
-  background-position: 0 -105px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-first-page-off {
-  background-position: 0 -117px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-last-page-off {
-  background-position: 0 -134px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-move_down {
-  background-position: 0 -146px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-move_down_disabled {
-  background-position: 0 -163px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-move_up {
-  background-position: 0 -180px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-move_up_disabled {
-  background-position: 0 -197px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-next-page-off {
-  background-position: 0 -214px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-next {
-  background-position: 0 -226px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-off {
-  background-position: 0 -238px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-on {
-  background-position: 0 -253px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-on_blue {
-  background-position: 0 -268px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-previous {
-  background-position: 0 -282px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-refresh {
-  background-position: 0 -294px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-search16x16 {
-  background-position: 0 -306px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-to_bottom {
-  background-position: 0 -319px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-to_bottom_disabled {
-  background-position: 0 -336px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-to_end {
-  background-position: 0 -353px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-to_first {
-  background-position: 0 -365px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-to_top {
-  background-position: 0 -382px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.list_panel-to_top_disabled {
-  background-position: 0 -399px;
-}
-
 /* line 8, publicss/sass/_list.scss */
 .list {
   width: 100%;
@@ -255,13 +57,18 @@
 /* line 29, publicss/sass/_list.scss */
 .rule-list thead tr td {
   text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
-/* line 34, publicss/sass/_list.scss */
+/* line 35, publicss/sass/_list.scss */
 .rule-list tbody {
   width: 100%;
   height: auto;
 }
-/* line 36, publicss/sass/_list.scss */
+/* line 37, publicss/sass/_list.scss */
 .rule-list tbody tr {
   width: 100%;
   height: 25px;
@@ -270,17 +77,17 @@
   border: 1px solid #eeeeee;
   text-indent: 5px;
 }
-/* line 42, publicss/sass/_list.scss */
+/* line 43, publicss/sass/_list.scss */
 .rule-list tbody tr.even-num-line {
   color: #3E3938;
   background-color: #fefefe;
 }
-/* line 45, publicss/sass/_list.scss */
+/* line 46, publicss/sass/_list.scss */
 .rule-list tbody tr.odd-num-line {
   color: #3E3938;
   background-color: #f8f8f8;
 }
-/* line 49, publicss/sass/_list.scss */
+/* line 50, publicss/sass/_list.scss */
 .rule-list td {
   white-space: pre;
   white-space: pre-wrap;
@@ -291,11 +98,11 @@
   white-space: -hp-pre-wrap;
   word-wrap: break-word;
 }
-/* line 51, publicss/sass/_list.scss */
+/* line 52, publicss/sass/_list.scss */
 .rule-list td input {
   cursor: pointer;
 }
-/* line 55, publicss/sass/_list.scss */
+/* line 56, publicss/sass/_list.scss */
 .rule-list td.text-hidden {
   white-space: nowrap;
   overflow: hidden;
@@ -305,7 +112,7 @@
   word-break: break-word;
 }
 
-/* line 60, publicss/sass/_list.scss */
+/* line 61, publicss/sass/_list.scss */
 .list-panel-title {
   width: 100%;
   height: 25px;
@@ -317,33 +124,33 @@
   min-height: 30px;
   line-height: 30px;
 }
-/* line 68, publicss/sass/_list.scss */
+/* line 69, publicss/sass/_list.scss */
 .list-panel-title img {
   vertical-align: middle;
   margin-right: 6px;
   margin-top: -2px;
 }
 
-/* line 74, publicss/sass/_list.scss */
+/* line 75, publicss/sass/_list.scss */
 .rule-listbc {
   width: 50px;
   text-indent: 0px;
   text-align: center;
 }
 
-/* line 79, publicss/sass/_list.scss */
+/* line 80, publicss/sass/_list.scss */
 .toolbar {
   width: 100%;
   height: inherit;
   background-color: #fefefe;
   *zoom: 1;
 }
-/* line 82, publicss/sass/_list.scss */
+/* line 83, publicss/sass/_list.scss */
 .toolbar .opt-tools {
   float: left;
   margin: 4px 10px;
 }
-/* line 86, publicss/sass/_list.scss */
+/* line 87, publicss/sass/_list.scss */
 .toolbar .search, .toolbar .paging-tools {
   float: right;
   margin: 5px 10px;
@@ -356,31 +163,31 @@
   clear: both;
 }
 
-/* line 94, publicss/sass/_list.scss */
+/* line 95, publicss/sass/_list.scss */
 .toolbar-paging-tools {
   color: #231915;
   background-color: #f2f2f2;
 }
-/* line 97, publicss/sass/_list.scss */
+/* line 98, publicss/sass/_list.scss */
 .toolbar-paging-tools .paging-tools img {
   margin: auto 8px;
   cursor: pointer;
 }
-/* line 101, publicss/sass/_list.scss */
+/* line 102, publicss/sass/_list.scss */
 .toolbar-paging-tools .paging-tools #first_page_icon_for_list_panel {
   vertical-align: sub;
 }
-/* line 104, publicss/sass/_list.scss */
+/* line 105, publicss/sass/_list.scss */
 .toolbar-paging-tools .paging-tools > span {
   margin: auto 6px;
 }
 
-/* line 109, publicss/sass/_list.scss */
+/* line 110, publicss/sass/_list.scss */
 .imaged-button, .add-panel-form-button {
   color: #fff;
   background-color: #5BC0DE;
   cursor: pointer;
-  min-width: 80px;
+  min-width: 75px;
   margin: auto 5px;
   padding: 4px 6px;
   border: none !important;
@@ -388,13 +195,13 @@
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 117, publicss/sass/_list.scss */
+/* line 118, publicss/sass/_list.scss */
 .imaged-button img, .add-panel-form-button img {
   vertical-align: text-top;
   margin-right: 4px;
 }
 
-/* line 122, publicss/sass/_list.scss */
+/* line 123, publicss/sass/_list.scss */
 button {
   cursor: pointer;
   vertical-align: middle;
@@ -403,61 +210,59 @@ button {
   margin-left: 5px;
 }
 
-/* line 130, publicss/sass/_list.scss */
+/* line 131, publicss/sass/_list.scss */
 .search .search-item {
   margin: auto 5px;
 }
-/* line 132, publicss/sass/_list.scss */
+/* line 133, publicss/sass/_list.scss */
 .search .search-item .search-key-input {
   width: 200px;
   height: 19px;
   font-size: 13px;
 }
-/* line 136, publicss/sass/_list.scss */
+/* line 137, publicss/sass/_list.scss */
 .search .search-item .search-button {
   min-width: 60px;
   width: 60px;
   margin-top: -2px;
 }
-/* line 140, publicss/sass/_list.scss */
+/* line 141, publicss/sass/_list.scss */
 .search .search-item .search-button .button-image {
   width: 12px;
   height: 12px;
 }
-/* line 143, publicss/sass/_list.scss */
+/* line 144, publicss/sass/_list.scss */
 .search .search-item .search-button .button-text {
   height: 10px;
   font-size: 13px;
   margin-left: 3px;
 }
 
-/* line 152, publicss/sass/_list.scss */
+/* line 153, publicss/sass/_list.scss */
 .align-center {
   text-align: center !important;
   text-indent: 0 !important;
 }
 
-/* line 156, publicss/sass/_list.scss */
+/* line 157, publicss/sass/_list.scss */
 .rule-listbc {
   width: 50px;
   text-indent: 0px;
   text-align: center;
 }
 
-/* line 161, publicss/sass/_list.scss */
+/* line 162, publicss/sass/_list.scss */
 .action-image {
-  width: 17px;
-  height: inherit;
   margin: auto 5px;
 }
 
-/* line 165, publicss/sass/_list.scss */
+/* line 166, publicss/sass/_list.scss */
 .mesg-box-s {
   width: 40%;
   max-height: 370px;
 }
 
-/* line 169, publicss/sass/_list.scss */
+/* line 170, publicss/sass/_list.scss */
 .close-button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -472,17 +277,17 @@ button {
   border: none;
 }
 
-/* line 178, publicss/sass/_list.scss */
+/* line 179, publicss/sass/_list.scss */
 .background-hovered {
   background-color: powderblue !important;
 }
 
-/* line 181, publicss/sass/_list.scss */
+/* line 182, publicss/sass/_list.scss */
 .background-checked {
   background-color: antiquewhite !important;
 }
 
-/* line 185, publicss/sass/_list.scss */
+/* line 186, publicss/sass/_list.scss */
 .control_stretch_table {
   display: inline-block;
   height: 25px;
@@ -490,6 +295,27 @@ button {
   cursor: col-resize;
   border: 1px solid transparent;
   box-sizing: border-box;
+}
+
+/* line 64, other/*.png */
+.other-sprite, .other-logo, .other-manager_controll, .other-warnning_lamp {
+  background-image: url('../images/other-s61a7760320.png');
+  background-repeat: no-repeat;
+}
+
+/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.other-logo {
+  background-position: 0 0;
+}
+
+/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.other-manager_controll {
+  background-position: 0 -50px;
+}
+
+/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
+.other-warnning_lamp {
+  background-position: 0 -69px;
 }
 
 /* line 11, publicss/sass/_popup.scss */
@@ -578,12 +404,12 @@ button {
   cursor: pointer;
 }
 
-/* line 13, publicss/sass/_add.scss */
+/* line 12, publicss/sass/_add.scss */
 table {
   font-size: 13px;
 }
 
-/* line 17, publicss/sass/_add.scss */
+/* line 16, publicss/sass/_add.scss */
 .popup-mesg-box-cover, .open-dialog__overlay {
   width: 100%;
   height: 100%;
@@ -600,7 +426,7 @@ table {
   opacity: 0.5;
 }
 
-/* line 30, publicss/sass/_add.scss */
+/* line 29, publicss/sass/_add.scss */
 .popup-mesg-box-body {
   position: absolute;
   top: 44%;
@@ -613,19 +439,19 @@ table {
   min-width: 450px;
   z-index: 60;
 }
-/* line 36, publicss/sass/_add.scss */
+/* line 35, publicss/sass/_add.scss */
 .popup-mesg-box-body .list {
   border: none;
   background-color: #fefefe;
 }
 
-/* line 42, publicss/sass/_add.scss */
+/* line 41, publicss/sass/_add.scss */
 .add-panel {
   width: 100%;
   height: auto;
 }
 
-/* line 46, publicss/sass/_add.scss */
+/* line 45, publicss/sass/_add.scss */
 .add-panel-header {
   width: 100%;
   height: 30px;
@@ -638,25 +464,25 @@ table {
   padding-top: 2px;
 }
 
-/* line 55, publicss/sass/_add.scss */
+/* line 54, publicss/sass/_add.scss */
 .add-panel-title {
   float: left;
   display: inline;
 }
-/* line 60, publicss/sass/_add.scss */
+/* line 59, publicss/sass/_add.scss */
 .add-panel-title img {
   float: left;
   display: block;
   margin: 7px 0px -7px 5px;
 }
-/* line 67, publicss/sass/_add.scss */
+/* line 66, publicss/sass/_add.scss */
 .add-panel-title .add-panel-title-text {
   font-size: 14px;
   font-weight: bold;
   color: #231915;
 }
 
-/* line 73, publicss/sass/_add.scss */
+/* line 72, publicss/sass/_add.scss */
 .add-panel-close-button {
   float: right;
   width: 20px;
@@ -665,18 +491,18 @@ table {
   font-weight: normal;
   cursor: pointer;
 }
-/* line 79, publicss/sass/_add.scss */
+/* line 78, publicss/sass/_add.scss */
 .add-panel-close-button:after {
   content: "x";
 }
 
-/* line 86, publicss/sass/_add.scss */
+/* line 85, publicss/sass/_add.scss */
 .add-panel-content {
   width: 100%;
   background-color: #fefefe;
 }
 
-/* line 91, publicss/sass/_add.scss */
+/* line 90, publicss/sass/_add.scss */
 .container-main-body {
   width: 100%;
   height: inherit;
@@ -712,18 +538,18 @@ table {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #555;
 }
-/* line 101, publicss/sass/_add.scss */
+/* line 100, publicss/sass/_add.scss */
 .container-main-body table {
   width: 100%;
   height: inherit;
   font-size: 13px;
   background-color: #fefefe;
 }
-/* line 107, publicss/sass/_add.scss */
+/* line 106, publicss/sass/_add.scss */
 .container-main-body table tr {
   border: 1px solid #eeeeee;
 }
-/* line 112, publicss/sass/_add.scss */
+/* line 111, publicss/sass/_add.scss */
 .container-main-body tr {
   line-height: 30px;
   height: 30px;
@@ -737,25 +563,25 @@ table {
   word-wrap: break-word;
   text-indent: 5px;
 }
-/* line 118, publicss/sass/_add.scss */
+/* line 117, publicss/sass/_add.scss */
 .container-main-body tr .add-panel-subtitle {
   text-indent: 15px;
   width: 15%;
   min-width: 140px;
   border-right: 1px solid #eeeeee;
 }
-/* line 125, publicss/sass/_add.scss */
+/* line 124, publicss/sass/_add.scss */
 .container-main-body tr .add-panel-section {
   width: 85%;
   text-indent: 0px;
   padding: 0 5px;
 }
-/* line 129, publicss/sass/_add.scss */
+/* line 128, publicss/sass/_add.scss */
 .container-main-body tr .add-panel-section input, .container-main-body tr .add-panel-section textarea, .container-main-body tr .add-panel-section select {
   border: 1px solid #c1c1c1;
 }
 
-/* line 136, publicss/sass/_add.scss */
+/* line 135, publicss/sass/_add.scss */
 .add-panel-form-text {
   width: 196px;
   height: 20px;
@@ -763,13 +589,13 @@ table {
   text-indent: 1px;
 }
 
-/* line 142, publicss/sass/_add.scss */
+/* line 141, publicss/sass/_add.scss */
 .add-panel-form-select {
   width: 196px;
   height: 24px;
 }
 
-/* line 146, publicss/sass/_add.scss */
+/* line 145, publicss/sass/_add.scss */
 .add-panel-form-item {
   display: inline-block;
   vertical-align: middle;
@@ -779,14 +605,14 @@ table {
   margin: 5px;
 }
 
-/* line 152, publicss/sass/_add.scss */
+/* line 151, publicss/sass/_add.scss */
 .add-panel-footer {
   color: #fff;
   background-color: #f2f2f2;
   padding: 4px 0;
   text-align: center;
 }
-/* line 158, publicss/sass/_add.scss */
+/* line 157, publicss/sass/_add.scss */
 .add-panel-footer input {
   color: #fff;
   background-color: #5BC0DE;
@@ -797,18 +623,18 @@ table {
   border: none;
 }
 
-/* line 169, publicss/sass/_add.scss */
+/* line 168, publicss/sass/_add.scss */
 .add-panel-form-button {
   min-width: 70px;
   height: 24px;
 }
 
-/* line 174, publicss/sass/_add.scss */
+/* line 173, publicss/sass/_add.scss */
 .add_panel_header_move {
   cursor: move;
 }
 
-/* line 177, publicss/sass/_add.scss */
+/* line 176, publicss/sass/_add.scss */
 .waggle-swing {
   -moz-animation: wobble 1s 0.2s ease both;
   -webkit-animation: wobble 1s 0.2s ease both;
@@ -884,24 +710,24 @@ table {
     -webkit-transform: translateX(0%);
   }
 }
-/* line 191, publicss/sass/_add.scss */
+/* line 190, publicss/sass/_add.scss */
 .required-star {
   margin-left: 3px;
   vertical-align: middle;
   color: red;
 }
 
-/* line 196, publicss/sass/_add.scss */
+/* line 195, publicss/sass/_add.scss */
 .container-main-body-m {
   max-height: 300px;
 }
 
-/* line 199, publicss/sass/_add.scss */
+/* line 198, publicss/sass/_add.scss */
 .container-main-body-s {
   max-height: 300px;
 }
 
-/* line 202, publicss/sass/_add.scss */
+/* line 201, publicss/sass/_add.scss */
 .mesg-box-m {
   width: 50%;
 }
@@ -910,7 +736,7 @@ table {
   max-height: 450px;
 }
 
-/* line 205, publicss/sass/_add.scss */
+/* line 204, publicss/sass/_add.scss */
 .mesg-box-s {
   width: 40%;
 }
@@ -919,7 +745,7 @@ table {
   max-height: 370px;
 }
 
-/* line 29, publicss/sass/add_list_base.scss */
+/* line 28, publicss/sass/add_list_base.scss */
 .disabled {
   cursor: not-allowed !important;
 }

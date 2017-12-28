@@ -24,7 +24,6 @@
 
 @import "variables","mixin";
 @import "list","add";
-@import "icons";
 
 .disabled{
 	@include hover(not-allowed!important);

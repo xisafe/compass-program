@@ -74,7 +74,7 @@
     background-color: #FFFFFF;
     border: none;
     text-align: center;
-    z-index: 65535;
+    z-index: 65535!important;
 }
 
 .popup-short-mesg-text-area {
@@ -110,5 +110,5 @@
 	margin-top:16px;
 }
 .popup-short-mesg-box-cover {
-    z-index: 65534;
+    z-index: 65534!important;
 }

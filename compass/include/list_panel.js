@@ -226,18 +226,14 @@ PagingHolder.prototype.add_listener_to_control_items = function() {
 }
 PagingHolder.prototype.add_listener_to_hover_tr = function() {
     var paging_holder = this;
-
-    $("#"+paging_holder.panel_body_id +' tr').each(function() {
-        $(this).hover(function() {
-            if ($(this).children('td').eq(0).html() != "&nbsp;") {
-                $(this).addClass('background-hovered');
-            }
-        }, function() {
-            $(this).removeClass('background-hovered');
-        });
-        
+    $("#"+paging_holder.panel_body_id).on('mouseenter', 'tr', function(event) {
+        if ($(this).children('td').eq(0).html() != "&nbsp;") {
+            $(this).addClass('background-hovered');
+        }
+    }).on('mouseleave', 'tr', function(event) {
+        $(this).removeClass('background-hovered');
     });
-    
+
 }
 PagingHolder.prototype.add_listener_to_panel_header = function() {
     var paging_holder = this;
@@ -1207,7 +1203,7 @@ PagingHolder.prototype.render_default_action = function( data_item ) {
     /*设置删除按钮*/
     if( data_item.undeletable === undefined) {
         var delete_class = paging_holder.delete_class;
-        rendered_text += '<input type="image" class="action-image ' + delete_class + '" src="../images/delete.png" title="删除" value="' + data_item.id + '"/>';
+        rendered_text += '<input type="image" class="action-image ' + delete_class + '" src="../images/delete_blue.png" title="删除" value="' + data_item.id + '"/>';
     }
 
     return rendered_text;
@@ -2593,7 +2589,11 @@ PagingHolder.prototype.show = function() {
 				}
 
 			})
-		}
+		}else{
+            $('#'+panel_config.check_in_id+' .popup-mesg-box-cover').on('click',function(){
+                $( check_in_selector ).hide()
+            })
+        }
 	}
     paging_holder.text_hidden();
 }

@@ -3,7 +3,7 @@
 @import "compass/typography";
 @import "compass/css3";
 @import "compass/layout";
-@import "variables","mixin","icons";
+@import "variables","mixin";
 
 // left.cgi
 
@@ -21,11 +21,11 @@
 			z-index: 6;
 		    line-height: 30px;
 		    position: fixed;
-		    padding-left:23px;
+		    padding-left:27px;
 		    i{
 		    	@include set_size(20px,20px);
 				@include inline-block();
-    			vertical-align: middle;
+    			vertical-align: baseline;
 		    }
     	}
     	#menu-content{
@@ -57,8 +57,17 @@
 					}
 				}
 				.selected{
+
 					a{
 						color:#fff;
+						&:before{
+							content:" ";
+							@include set_size(7px,7px);
+							@include border-radius(50%);
+							@include inline-block();
+							margin:-2px 6px auto -18px;
+							background-color:$left-menu-blue;
+						}
 					}
 				}
 			}

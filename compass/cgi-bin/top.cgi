@@ -92,7 +92,7 @@ printf <<EOF
 <!--<link rel="stylesheet" type="text/css" href="/include/main.css" />-->
 <link rel="stylesheet" type="text/css" href="/include/add_list_base.css" />
 <link rel="stylesheet" type="text/css" href="/include/main.css" />
-<link rel="stylesheet" type="text/css" href="/include/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="/include/iconfont/iconfont.css" />
 <script language="javascript" type="text/javascript" src="/include/jquery.js"></script>
 
 
@@ -178,8 +178,9 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
     </a>
 
 <div class="header-right">
-<div id="alarm_controller">
-    <span  alt="报警事件"  onclick="show_alarm_panel()"></span>
+
+<div style="float:left;width:10%;margin-top:8px;" id="alarm_controller">
+    <img src="/images/alarm.png" alt="报警事件" style="width:45px;" onclick="show_alarm_panel()">
     <audio src="#" autoplay=true loop=true hidden=ture></audio>
 </div>
 
@@ -194,9 +195,8 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
     <li>
         <form METHOD="post" action="$ENV{'SCRIPT_NAME'}"  onclick="do_confirm_restart();" class="top_page_img_title" title="重启">
             <span>
-                <span class="fa-stack fa-lg font-awesome-circle">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-refresh fa-stack-1x fa-inverse font-awesome-inner"></i>
+                <span class="icon-wrap">
+                    <i class="iconfont fw-zhongqi"></i>
                 </span>
                 <span >重启</span>
                 <input type="hidden" name="ACTION" value="restart">
@@ -207,9 +207,8 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
     <li>
         <form METHOD="post" action="$ENV{'SCRIPT_NAME'}" onclick="do_confirm_shutdown();" title="关机">
             <span class="top_page_img_title" >
-                <span class="fa-stack fa-lg font-awesome-circle">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-power-off fa-stack-1x fa-inverse font-awesome-inner"></i>
+                <span class="icon-wrap">
+                    <i class="iconfont fw-guanji1"></i>
                 </span>
                 <span>关机</span>
                 <input type="hidden" name="ACTION" value="shutdown">
@@ -220,9 +219,8 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
     <li title="%s">        
         <form METHOD="post" action="$ENV{'SCRIPT_NAME'}" id="help_form" onclick="document.getElementById('help_form').submit();fresh_current_page('$url');return false;" title="帮助">
             <span class="top_page_img_title" >
-                <span class="fa-stack fa-lg font-awesome-circle">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-question fa-stack-1x fa-inverse font-awesome-inner"></i>
+                <span class="icon-wrap">
+                    <i class="iconfont fw-wenhao"></i>
                 </span>
                 <span type="submit">%s</span>
                 <input type="hidden" name="ACTION" value="$hidden_action">
@@ -237,9 +235,8 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
 
 
             <span  class="top_page_img_title" >
-                <span class="fa-stack fa-lg font-awesome-circle">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-cog fa-stack-1x fa-inverse font-awesome-inner"></i>
+                <span class="icon-wrap">
+                    <i class="iconfont fw-chilun1"></i>
                 </span>
                 <span>修改密码</span>
 
@@ -249,9 +246,8 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
     <li title="退出系统">
         <form METHOD="post" action="$ENV{'SCRIPT_NAME'}" id="logout_form" onclick="document.getElementById('logout_form').submit();" title="退出系统">
             <span class="top_page_img_title"  >
-                <span class="fa-stack fa-lg font-awesome-circle">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-user fa-stack-1x fa-inverse font-awesome-inner"></i>
+                <span class="icon-wrap">
+                    <i class="iconfont fw-yonghu1"></i>
                 </span>
                 <span id="now_user" title="$user[0]">$user[0]</span>
                 <input type="hidden" name="ACTION" value="logout">

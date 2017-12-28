@@ -3,7 +3,7 @@
 @import "compass/typography";
 @import "compass/css3";
 @import "compass/layout";
-@import "variables","mixin","icons";
+@import "variables","mixin";
 
 .list {
 	@include set_size(100%,auto);
@@ -28,6 +28,7 @@
             font-weight:bold;
             td{
                 text-align:center;
+                @include ellipsis();
             }
         }
     }
@@ -109,7 +110,7 @@
 .imaged-button {
 	@include set_color(#fff,#5BC0DE);
     @include hover();
-    min-width: 80px;
+    min-width: 75px;
     margin:auto 5px;
     padding: 4px 6px;
     border:none!important;
@@ -159,7 +160,7 @@ button {
     text-align: center;
 }
 .action-image {
-    @include set_size(17px);
+    // @include set_size(17px);
     margin:auto 5px;
 }
 .mesg-box-s {

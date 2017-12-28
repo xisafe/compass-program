@@ -2,9 +2,9 @@
 
 $logo-layout:horizontal;//smart
 @import "other/*.png";
-@import "top/*.png";
-@import "list_panel/*.png";
+// @import "top/*.png";
+// @import "list_panel/*.png";
 
-@include all-top-sprites();
+// @include all-top-sprites();
 @include all-other-sprites();
-@include all-list_panel-sprites();
+// @include all-list_panel-sprites();

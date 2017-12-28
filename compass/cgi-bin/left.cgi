@@ -84,6 +84,7 @@ sub left_html()
         <title>$system_title</title>
         <link rel="shortcut icon" href="/images/shortcut.ico" />
         <link rel="stylesheet" type="text/css" href="/include/main.css" />
+        <link rel="stylesheet" type="text/css" href="/include/iconfont/iconfont.css" />
         <script language="javascript" type="text/javascript" src="/include/jquery.js"></script>
         <script language="javascript" type="text/javascript" src="/include/left-menu.js"></script>
         <script type="text/javascript" src="/include/for_iE6_png.js"></script>
@@ -91,9 +92,7 @@ sub left_html()
     <body id="left-body">
         <div class="left-menu">
             <div id="left-menu-header">
-                <span class="arrow">
-                    <img src='/images/menu.png' style="margin: 0px 3px -3px 22px;"/>
-                </span>%s
+                <i class="iconfont fw-shoudongdiaojie"></i>%s
             </div>
             <div id="menu-content">
                 <dl>
