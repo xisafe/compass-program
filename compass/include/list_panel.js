@@ -1192,7 +1192,7 @@ PagingHolder.prototype.render_default_action = function( data_item ) {
             rendered_text += '<input type="image" class="action-image ' + disable_class + '" src="../images/on_blue.png" title="禁用" value="' + data_item.id + '"/>';
         } else {
             var enable_class = paging_holder.enable_class;
-            rendered_text += '<input type="image" class="action-image ' + enable_class + '" src="../images/off.png" title="启用" value="' + data_item.id + '"/>';
+            rendered_text += '<input type="image" class="action-image ' + enable_class + '" src="../images/off_blue.png" title="启用" value="' + data_item.id + '"/>';
         }
     }
     /*设置编辑按钮*/
