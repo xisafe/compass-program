@@ -1,0 +1,43 @@
+#list_panel_id_for_list_panel .toolbar{border: none;}
+#list_panel_id_for_list_panel .toolbar span{margin: 0;}
+#add-div-content table{height: 36px;}
+
+.importlog-left{line-height: 40px;}
+.chioce-right{line-height: 37px;height: 41px;}
+
+.file{top: 6px;left: 50px;}
+
+.chioce-right label {
+    margin-left: 75px;
+    font-weight: normal;
+    top: -3px;
+    position: relative;
+}
+
+.chioce-right select {
+    position: relative;
+    top: 7px;
+    width: 120px;
+    height: 26px;
+    left: 50px;
+    border-radius: 4px;
+}
+
+.chioce-right select:hover{
+	cursor: pointer;
+}
+
+.chioce-right select option{
+	height: 26px;
+}
+.mesg-box-s tr.add-panel-odd-line td.add-panel-subtitle, .mesg-box-s tr.add-panel-even-line td.add-panel-subtitle {
+    width: 25%;
+}
+.add-panel-odd-line {
+    height: 50px;
+}
+
+textarea:disabled, input:disabled {
+    background-color: none !important; 
+    color: rgb(84, 84, 84);
+}

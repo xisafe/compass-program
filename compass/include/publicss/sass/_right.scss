@@ -24,7 +24,7 @@
 			@include unstyled-link();
 			@include hover();
 			padding:0 15px;
-			@include set_font(13px);
+			@include set_font(12px);
 		}
 	}
 }
@@ -64,10 +64,11 @@
 
 #add-div-header,.containter-div-header{
 	@include inline-block();
-	@include set_size(100%,25px);
+	@include set_size(100%);
 	@include set_color(#073662,#f2f2f2);
     @include set_font(13px);
     text-indent: 10px;
+    padding:3px 0;
     span{
     	margin-top:6px!important;
     }
@@ -91,12 +92,10 @@
 	}
 }
 .table-footer {
-	@include line-height(25px);
 	@include set_color(#192027,#f2f2f2);
-    text-indent: 20px;
     td{
     	text-align:center;
-    	padding: 3px;
+    	padding: 5px;
     }
 }
 .add-div-footer{
@@ -111,6 +110,7 @@
 }
 .env,.odd {
     text-indent: 5px;
+    line-height:30px;
     td{
 	    padding: 5px;
     }
