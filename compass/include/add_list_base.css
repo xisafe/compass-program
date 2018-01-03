@@ -19,6 +19,7 @@
  * BASE
  * 
  */
+/* 顶部 */
 /* line 8, publicss/sass/_list.scss */
 .list {
   width: 100%;
@@ -295,27 +296,6 @@ button {
   box-sizing: border-box;
 }
 
-/* line 64, other/*.png */
-.other-sprite, .other-logo, .other-manager_controll, .other-warnning_lamp {
-  background-image: url('../images/other-s61a7760320.png');
-  background-repeat: no-repeat;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-logo {
-  background-position: 0 0;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-manager_controll {
-  background-position: 0 -50px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-warnning_lamp {
-  background-position: 0 -69px;
-}
-
 /* line 11, publicss/sass/_popup.scss */
 .popup-tip {
   -moz-border-radius: 7px;
@@ -519,12 +499,12 @@ table {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 37, publicss/sass/_mixin.scss */
 .container-main-body::-webkit-scrollbar {
   width: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 41, publicss/sass/_mixin.scss */
 .container-main-body::-webkit-scrollbar-thumb {
@@ -534,7 +514,7 @@ table {
   -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #555;
+  background-color: #9f9f9f;
 }
 /* line 100, publicss/sass/_add.scss */
 .container-main-body table {

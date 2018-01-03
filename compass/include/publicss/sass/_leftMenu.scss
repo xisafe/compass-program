@@ -30,6 +30,7 @@
     	}
     	#menu-content{
 			padding-top:31px;
+			// font-weight:bold;
     	}
     }
 }
@@ -42,7 +43,7 @@
 				@include set_size();
 				@include no-bullet();
 				li{
-					@include set_color(inherit,$footer-bg-color);
+					@include set_color(inherit,$left-menu-se-bg-color);
 					&:hover{
 						@include set_color(#fff,$left-menu-blue);
 						@include hover();
@@ -59,7 +60,8 @@
 				.selected{
 
 					a{
-						color:#fff;
+						// color:$left-menu-se-font-color;
+						@include set_font($left-menu-se-font-color);
 						&:before{
 							content:" ";
 							@include set_size(0px,0px);
@@ -78,7 +80,8 @@
 		dt{
 			@include set_size(100%);
 			@include line-height(28px);
-			@include set_color($left-menu-font);
+			color:$left-menu-font;
+			// @include set_color($left-menu-font);
 			@include hover();
 			padding: 6px;
 			font-size:14px;
@@ -90,9 +93,9 @@
 				@include set_size();
 			}
 			&.sele_fir_menu,&:hover{
-				@include set_color(#fff,$left-menu-hover);
+				@include set_color($fir-hover-font-color,$left-menu-hover);
 				border-color:$left-menu-blue;
-				font-weight:normal;
+				font-weight:bold;
 			}
 		}
 	}
@@ -101,7 +104,7 @@
 .carat{
     position: absolute;
     border: 5px solid transparent;
-    border-left: 6px solid #989DAC;
+    border-left: 6px solid $carat;
     z-index: 1;
     margin-left: 125px;
     margin-top: 11px;
@@ -111,7 +114,7 @@
 .carat_open{
     position: absolute;
     border: 5px solid transparent;
-    border-left: 6px solid #989DAC;
+    border-left: 6px solid $carat;
     z-index: 1;
     margin-left: 125px;
     margin-top: 11px;
@@ -124,5 +127,5 @@ dt a:hover .carat,
 dt a:hover .carat_open,
 dt a:focus .carat,
 dt a:focus .carat_open {
-    border-left: 6px solid #fff;
+    border-left: 6px solid $carat-hover;
 }

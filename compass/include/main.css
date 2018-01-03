@@ -84,33 +84,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 64, other/*.png */
-.other-sprite, .other-logo, .other-manager_controll, .other-warnning_lamp, a.logo, #alarm_controller span {
-  background-image: url('../images/other-s61a7760320.png');
-  background-repeat: no-repeat;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-logo {
-  background-position: 0 0;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-manager_controll {
-  background-position: 0 -50px;
-}
-
-/* line 84, ../../../../usr/local/lib/ruby/gems/2.4.0/gems/compass-core-1.0.3/stylesheets/compass/utilities/sprites/_base.scss */
-.other-warnning_lamp {
-  background-position: 0 -69px;
-}
-
+/* 顶部 */
 /* line 10, publicss/sass/_top.scss */
 .header {
   width: 100%;
   height: 70px;
   color: #fefefe;
-  background-color: #2B303E;
+  background-color: #3498DB;
   min-width: 950px;
 }
 /* line 14, publicss/sass/_top.scss */
@@ -138,14 +118,10 @@ a.logo {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  background-position: 0 0;
   color: inherit;
   text-decoration: inherit;
   cursor: inherit;
   cursor: pointer;
-  height: 36px;
-  padding-top: 10px;
-  padding-left: 52px;
   margin-left: 12px;
   margin-top: 7px;
 }
@@ -153,17 +129,21 @@ a.logo {
 a.logo:active, a.logo:focus {
   outline: none;
 }
-/* line 41, publicss/sass/_top.scss */
+/* line 35, publicss/sass/_top.scss */
+a.logo img {
+  vertical-align: middle;
+}
+/* line 38, publicss/sass/_top.scss */
 a.logo #CH_logo_title {
   font-size: 30px;
   font-family: "华文楷体", serif;
 }
 
-/* line 49, publicss/sass/_top.scss */
+/* line 46, publicss/sass/_top.scss */
 #alarm_controller {
   float: left;
 }
-/* line 51, publicss/sass/_top.scss */
+/* line 48, publicss/sass/_top.scss */
 #alarm_controller span {
   width: 50px;
   height: 60px;
@@ -172,21 +152,20 @@ a.logo #CH_logo_title {
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
-  background-position: 0 -69px;
   margin-top: 8px;
 }
-/* line 57, publicss/sass/_top.scss */
+/* line 54, publicss/sass/_top.scss */
 #alarm_controller img {
   cursor: pointer;
 }
 
-/* line 62, publicss/sass/_top.scss */
+/* line 59, publicss/sass/_top.scss */
 .help-div {
   float: right;
   line-height: 58px;
   margin-right: 17px;
 }
-/* line 67, publicss/sass/_top.scss */
+/* line 64, publicss/sass/_top.scss */
 .help-div .kwicks {
   margin: 0;
   padding: 0;
@@ -216,16 +195,16 @@ a.logo #CH_logo_title {
 .help-div .kwicks li.last {
   padding-right: 0;
 }
-/* line 70, publicss/sass/_top.scss */
+/* line 67, publicss/sass/_top.scss */
 .help-div .kwicks li form {
   cursor: pointer;
 }
-/* line 73, publicss/sass/_top.scss */
+/* line 70, publicss/sass/_top.scss */
 .help-div .kwicks li form span span {
   font-size: 13px;
   vertical-align: middle;
 }
-/* line 77, publicss/sass/_top.scss */
+/* line 74, publicss/sass/_top.scss */
 .help-div .kwicks li form span .icon-wrap {
   display: inline-block;
   vertical-align: middle;
@@ -234,7 +213,7 @@ a.logo #CH_logo_title {
   *display: inline;
   width: 26px;
   height: 26px;
-  color: #2B303E;
+  color: #3498DB;
   background-color: #fff;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
@@ -243,7 +222,7 @@ a.logo #CH_logo_title {
   font-weight: bold;
   text-align: center;
 }
-/* line 85, publicss/sass/_top.scss */
+/* line 82, publicss/sass/_top.scss */
 .help-div .kwicks li form span .icon-wrap i {
   position: absolute;
   top: -16px;
@@ -252,19 +231,19 @@ a.logo #CH_logo_title {
   right: 0;
 }
 
-/* line 95, publicss/sass/_top.scss */
+/* line 92, publicss/sass/_top.scss */
 .font-awesome-circle {
   font-size: 15px !important;
 }
-/* line 97, publicss/sass/_top.scss */
+/* line 94, publicss/sass/_top.scss */
 .font-awesome-circle .font-awesome-inner {
-  color: #2B303E;
+  color: #3498DB;
   font-size: 18px !important;
 }
 
 /* line 10, publicss/sass/_footer.scss */
 .main-footer {
-  background-color: #2b2e37;
+  background-color: #3498DB;
 }
 /* line 12, publicss/sass/_footer.scss */
 .main-footer table {
@@ -307,8 +286,8 @@ a.logo #CH_logo_title {
 #left-body {
   width: 100%;
   height: inherit;
-  color: #989dac;
-  background-color: #2B303E;
+  color: #231915;
+  background-color: #E8EBF2;
   min-width: 180px;
   overflow-y: auto;
 }
@@ -320,12 +299,12 @@ a.logo #CH_logo_title {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 37, publicss/sass/_mixin.scss */
 #left-body::-webkit-scrollbar {
   width: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 41, publicss/sass/_mixin.scss */
 #left-body::-webkit-scrollbar-thumb {
@@ -335,14 +314,14 @@ a.logo #CH_logo_title {
   -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #555;
+  background-color: #9f9f9f;
 }
 /* line 17, publicss/sass/_leftMenu.scss */
 #left-body .left-menu #left-menu-header {
   width: 100%;
   height: 30px;
   color: #e6e6bd;
-  background-color: #2B303E;
+  background-color: #3498DB;
   border-top: 1px solid #767A83;
   z-index: 6;
   line-height: 30px;
@@ -365,7 +344,7 @@ a.logo #CH_logo_title {
   padding-top: 31px;
 }
 
-/* line 41, publicss/sass/_leftMenu.scss */
+/* line 42, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul {
   width: 100%;
   height: inherit;
@@ -373,18 +352,18 @@ a.logo #CH_logo_title {
   list-style-type: none;
   margin-left: 0;
 }
-/* line 44, publicss/sass/_leftMenu.scss */
+/* line 45, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul li {
   color: inherit;
-  background-color: #2b2e37;
+  background-color: #fff;
 }
-/* line 46, publicss/sass/_leftMenu.scss */
+/* line 47, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul li:hover {
   color: #fff;
   background-color: #2299EE;
   cursor: pointer;
 }
-/* line 50, publicss/sass/_leftMenu.scss */
+/* line 51, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul li a {
   display: inline-block;
   vertical-align: middle;
@@ -405,11 +384,12 @@ a.logo #CH_logo_title {
 #menu-content dl dd ul li a:active, #menu-content dl dd ul li a:focus {
   outline: none;
 }
-/* line 61, publicss/sass/_leftMenu.scss */
+/* line 62, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul .selected a {
-  color: #fff;
+  font-size: #000;
+  font-weight: bold;
 }
-/* line 63, publicss/sass/_leftMenu.scss */
+/* line 65, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul .selected a:before {
   content: " ";
   width: 0px;
@@ -424,21 +404,20 @@ a.logo #CH_logo_title {
   border-color: transparent transparent transparent #2299EE;
   margin: -2px 4px auto -18px;
 }
-/* line 78, publicss/sass/_leftMenu.scss */
+/* line 80, publicss/sass/_leftMenu.scss */
 #menu-content dl dt {
   width: 100%;
   height: inherit;
   line-height: 28px;
   height: 28px;
-  color: #989dac;
-  background-color: #2B303E;
+  color: #231915;
   cursor: pointer;
   padding: 6px;
   font-size: 14px;
   padding-left: 23px;
-  border-left: 3px solid #2B303E;
+  border-left: 3px solid #E8EBF2;
 }
-/* line 87, publicss/sass/_leftMenu.scss */
+/* line 90, publicss/sass/_leftMenu.scss */
 #menu-content dl dt a {
   color: inherit;
   text-decoration: inherit;
@@ -455,19 +434,19 @@ a.logo #CH_logo_title {
 #menu-content dl dt a:active, #menu-content dl dt a:focus {
   outline: none;
 }
-/* line 92, publicss/sass/_leftMenu.scss */
+/* line 95, publicss/sass/_leftMenu.scss */
 #menu-content dl dt.sele_fir_menu, #menu-content dl dt:hover {
-  color: #fff;
-  background-color: #3b3f4d;
+  color: #000;
+  background-color: #f2f2f2;
   border-color: #2299EE;
-  font-weight: normal;
+  font-weight: bold;
 }
 
-/* line 101, publicss/sass/_leftMenu.scss */
+/* line 104, publicss/sass/_leftMenu.scss */
 .carat {
   position: absolute;
   border: 5px solid transparent;
-  border-left: 6px solid #989DAC;
+  border-left: 6px solid #231915;
   z-index: 1;
   margin-left: 125px;
   margin-top: 11px;
@@ -477,11 +456,11 @@ a.logo #CH_logo_title {
   transition: color 0.3s;
 }
 
-/* line 111, publicss/sass/_leftMenu.scss */
+/* line 114, publicss/sass/_leftMenu.scss */
 .carat_open {
   position: absolute;
   border: 5px solid transparent;
-  border-left: 6px solid #989DAC;
+  border-left: 6px solid #231915;
   z-index: 1;
   margin-left: 125px;
   margin-top: 11px;
@@ -499,12 +478,12 @@ a.logo #CH_logo_title {
   transition: color 0.3s;
 }
 
-/* line 123, publicss/sass/_leftMenu.scss */
+/* line 126, publicss/sass/_leftMenu.scss */
 dt a:hover .carat,
 dt a:hover .carat_open,
 dt a:focus .carat,
 dt a:focus .carat_open {
-  border-left: 6px solid #fff;
+  border-left: 6px solid #000;
 }
 
 /* line 10, publicss/sass/_right.scss */
@@ -599,12 +578,12 @@ dt a:focus .carat_open {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 37, publicss/sass/_mixin.scss */
 .right-content::-webkit-scrollbar {
   width: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 41, publicss/sass/_mixin.scss */
 .right-content::-webkit-scrollbar-thumb {
@@ -614,7 +593,7 @@ dt a:focus .carat_open {
   -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #555;
+  background-color: #9f9f9f;
 }
 
 /* line 44, publicss/sass/_right.scss */
@@ -640,12 +619,12 @@ dt a:focus .carat_open {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 37, publicss/sass/_mixin.scss */
 #module-content23::-webkit-scrollbar {
   width: 10px;
-  background-color: #F5F5F5;
+  background-color: #e2e2e2;
 }
 /* line 41, publicss/sass/_mixin.scss */
 #module-content23::-webkit-scrollbar-thumb {
@@ -655,7 +634,7 @@ dt a:focus .carat_open {
   -moz-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #555;
+  background-color: #9f9f9f;
 }
 
 /* line 58, publicss/sass/_right.scss */
@@ -1068,11 +1047,9 @@ caption, th, td {
   cursor: pointer;
   color: #fff;
   background-color: #5BC0DE;
-  width: 90px;
-  height: inherit;
   margin: 0px 15px;
   padding: 6px 5px;
-  min-width: 80px;
+  min-width: 90px;
   border: none;
 }
 
@@ -1149,7 +1126,7 @@ body {
 
 /* line 36, publicss/sass/main.scss */
 #bottomFrame {
-  background-color: #2b2e37;
+  background-color: #3498DB;
 }
 
 /* line 43, publicss/sass/main.scss */

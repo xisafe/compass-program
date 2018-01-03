@@ -3,7 +3,7 @@
 @import "compass/typography";
 @import "compass/css3";
 @import "compass/layout";
-@import "variables","mixin","icons";
+@import "variables","mixin";
 
 // top.cgi样式
 
@@ -26,17 +26,14 @@
 
 a.logo{
 	@include inline-block();
-	@include other-sprite("logo");
 	@include unstyled-link();
 	@include hover();
-	height:36px;
-	padding:{
-		top:10px;
-		left:52px;
-	}
 	margin:{
 		left:12px;
 		top:7px;
+	}
+	img{
+		vertical-align:middle;
 	}
 	#CH_logo_title{
 		font:{
@@ -51,7 +48,7 @@ a.logo{
 	span{
 		@include set_size(50px,60px);
 		@include inline-block();
-		@include other-sprite("warnning_lamp");
+		// @include other-sprite("warnning_lamp");
 		margin-top:8px;
 	}
 	img{
@@ -77,7 +74,7 @@ a.logo{
 					.icon-wrap{
 						@include inline-block();
 						@include set_size(26px,26px);
-						@include set_color(#2B303E,#fff);
+						@include set_color($top-bg-color,#fff);
 						@include border-radius(50%);
 						position: relative;
 						font-weight:bold;	

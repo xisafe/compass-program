@@ -28,7 +28,7 @@
     height:$line-height;
 }
 
-@mixin scroll($width:10px,$bg-color:#F5F5F5,$color:#555){
+@mixin scroll($width:10px,$bg-color:$scroll_bg_color,$color:$scroll_color){
   &::-webkit-scrollbar-track{
     @include box-shadow(inset 0 0 6px rgba(0,0,0,0.3));
     @include border-radius($width);

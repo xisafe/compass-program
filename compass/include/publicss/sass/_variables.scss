@@ -6,12 +6,74 @@ $base-font-size:12px;
 $base-line-height:14px;
 $font-wryh: "微软雅黑", sans-serif;
 $font-hwkt: "华文楷体", serif;
-// /* 顶部 */
 
+// // 黑色
+// $top-bg-color:#2B303E;
+// // 顶部字体颜色
+// $top-font-color:#fefefe;
+
+// // 底部背景
+// $footer-bg-color:#2B2E37;
+// // 底部字体
+// $footer-font:#fff;
+
+// // 左菜单背景色
+// $left-menu-bg-color:#2B303E;
+// //左菜单二级菜单背景色
+// $left-menu-se-bg-color:#2B2E37;
+// //左菜单二级菜单色
+// $left-menu-se-font-color:#fff;
+// // 左菜单蓝色
+// $left-menu-blue:#2299EE;
+// // 左菜单hover色
+// $left-menu-hover:#3B3F4D;
+// // 左菜单字体
+// $left-menu-font:#989DAC;
+// // 左菜单头部字体
+// $left-menu-header-font-color:#e6e6bd;
+// 一级菜单鼠标滑过
+// $fir-hover-font-color:#fff;
+// $carat:#989DAC;
+// $carat-hover:#fff;
+// $scroll_bg_color:#F5F5F5;
+// $scroll_color:#555;
+
+// 蓝色
 // 顶部背景色
-$top-bg-color:#2B303E;
+$top-bg-color:#3498DB;
 // 顶部字体颜色
 $top-font-color:#fefefe;
+
+// 底部背景
+$footer-bg-color:#3498DB;
+// 底部字体
+$footer-font:#fff;
+
+// 左菜单背景色
+$left-menu-bg-color:#E8EBF2;
+// 左菜单二级菜单背景色
+$left-menu-se-bg-color:#fff;
+// 左菜单二级菜单色
+$left-menu-se-font-color:#000;
+// 左菜单蓝色
+$left-menu-blue:#2299EE;
+// 左菜单hover色
+$left-menu-hover:#f2f2f2;
+// 左菜单字体
+$left-menu-font:#231915;
+// 左菜单头部字体
+$left-menu-header-font-color:#e6e6bd;
+// 一级菜单鼠标滑过
+$fir-hover-font-color:#000;
+
+$carat:#231915;
+$carat-hover:#000;
+
+$scroll_bg_color:#e2e2e2;
+$scroll_color:#9f9f9f;
+
+/* 顶部 */
+
 // logo字体大小
 $top-logo-font-size:30px;
 // 顶部功能键字体大小
@@ -20,16 +82,7 @@ $top-fn-font-size:13px;
 
 // /* 左菜单 */
 
-// 左菜单背景色
-$left-menu-bg-color:#2B303E;
-// 左菜单蓝色
-$left-menu-blue:#2299EE;
-// 左菜单hover色
-$left-menu-hover:#3b3f4d;
-// 左菜单字体
-$left-menu-font:#989dac;
-// 左菜单头部字体
-$left-menu-header-font-color:#e6e6bd;
+
 // 左菜单头部字体大小
 $left-menu-header-font-size:15px;
 // 一级菜单大小
@@ -38,10 +91,6 @@ $left-menu-fir-font-size:15px;
 $left-menu-sec-font-size:14px;
 
 // /* 底部 */
-// 底部背景
-$footer-bg-color:#2b2e37;
-// 底部字体
-$footer-font:#fff;
 // 底部字体大小
 $footer-font-size:12px;
 

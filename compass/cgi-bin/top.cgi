@@ -174,6 +174,7 @@ y:e.clientY+document.body.scrollTop+document.documentElement.scrollTop};
 <div class="header">
     <!--将图标和文字分开管理 By WL-->
     <a class="logo" onclick="refresh_page()" href='/index.cgi'>
+        <img src="/images/logo.png" alt="">
         <span id="CH_logo_title">$system_settings{'SYSTEM_TITLE'}</span>
     </a>
 
