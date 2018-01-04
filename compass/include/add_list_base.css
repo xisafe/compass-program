@@ -191,7 +191,7 @@
   cursor: pointer;
   min-width: 78px;
   margin: auto 8px;
-  padding: 5px 10px;
+  padding: 6px 10px;
   border: none !important;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -220,7 +220,7 @@ button {
 .search .search-item .search-key-input {
   width: 196px;
   height: inherit;
-  padding: 5px;
+  padding: 6px;
   font-size: 12px;
   vertical-align: middle;
 }

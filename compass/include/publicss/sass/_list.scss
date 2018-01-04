@@ -8,7 +8,7 @@
 .list {
 	@include set_size(100%,auto);
     margin: 0px auto;
-    border :2px solid #e2e2e2;
+    border:2px solid #e2e2e2;
     background-color:#fefefe;
     .container-main-body{
     	@include set_size(100%,auto);
@@ -115,7 +115,7 @@
     @include hover();
     min-width: 78px;
     margin:auto 8px;
-    padding: 5px 10px;
+    padding: 6px 10px;
     border:none!important;
     @include border-radius(2px);
     img{
@@ -135,7 +135,7 @@ button {
 	    margin-right:5px;
 	    .search-key-input {
 	    	@include set_size(196px);
-            padding:5px;
+            padding:6px;
 		    font-size: 12px;
             vertical-align: middle;
 		}

@@ -34,8 +34,14 @@ a.logo{
 	}
 	img{
 		vertical-align:middle;
+		@include float();
 	}
 	#CH_logo_title{
+		@include float();
+		margin:{
+			left:-10px;
+			top:10px;
+		}
 		font:{
 			size:$top-logo-font-size;
 			family: $font-hwkt;

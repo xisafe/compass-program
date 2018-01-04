@@ -132,18 +132,22 @@ a.logo:active, a.logo:focus {
 /* line 35, publicss/sass/_top.scss */
 a.logo img {
   vertical-align: middle;
+  float: left;
 }
-/* line 38, publicss/sass/_top.scss */
+/* line 39, publicss/sass/_top.scss */
 a.logo #CH_logo_title {
+  float: left;
+  margin-left: -10px;
+  margin-top: 10px;
   font-size: 30px;
   font-family: "华文楷体", serif;
 }
 
-/* line 46, publicss/sass/_top.scss */
+/* line 52, publicss/sass/_top.scss */
 #alarm_controller {
   float: left;
 }
-/* line 48, publicss/sass/_top.scss */
+/* line 54, publicss/sass/_top.scss */
 #alarm_controller span {
   width: 50px;
   height: 60px;
@@ -154,18 +158,18 @@ a.logo #CH_logo_title {
   *display: inline;
   margin-top: 8px;
 }
-/* line 54, publicss/sass/_top.scss */
+/* line 60, publicss/sass/_top.scss */
 #alarm_controller img {
   cursor: pointer;
 }
 
-/* line 59, publicss/sass/_top.scss */
+/* line 65, publicss/sass/_top.scss */
 .help-div {
   float: right;
   line-height: 58px;
   margin-right: 17px;
 }
-/* line 64, publicss/sass/_top.scss */
+/* line 70, publicss/sass/_top.scss */
 .help-div .kwicks {
   margin: 0;
   padding: 0;
@@ -195,16 +199,16 @@ a.logo #CH_logo_title {
 .help-div .kwicks li.last {
   padding-right: 0;
 }
-/* line 67, publicss/sass/_top.scss */
+/* line 73, publicss/sass/_top.scss */
 .help-div .kwicks li form {
   cursor: pointer;
 }
-/* line 70, publicss/sass/_top.scss */
+/* line 76, publicss/sass/_top.scss */
 .help-div .kwicks li form span span {
   font-size: 13px;
   vertical-align: middle;
 }
-/* line 74, publicss/sass/_top.scss */
+/* line 80, publicss/sass/_top.scss */
 .help-div .kwicks li form span .icon-wrap {
   display: inline-block;
   vertical-align: middle;
@@ -222,7 +226,7 @@ a.logo #CH_logo_title {
   font-weight: bold;
   text-align: center;
 }
-/* line 82, publicss/sass/_top.scss */
+/* line 88, publicss/sass/_top.scss */
 .help-div .kwicks li form span .icon-wrap i {
   position: absolute;
   top: -16px;
@@ -231,11 +235,11 @@ a.logo #CH_logo_title {
   right: 0;
 }
 
-/* line 92, publicss/sass/_top.scss */
+/* line 98, publicss/sass/_top.scss */
 .font-awesome-circle {
   font-size: 15px !important;
 }
-/* line 94, publicss/sass/_top.scss */
+/* line 100, publicss/sass/_top.scss */
 .font-awesome-circle .font-awesome-inner {
   color: #3498DB;
   font-size: 18px !important;
@@ -287,7 +291,7 @@ a.logo #CH_logo_title {
   width: 100%;
   height: inherit;
   color: #231915;
-  background-color: #E8EBF2;
+  background-color: #e0e0e0;
   min-width: 180px;
   overflow-y: auto;
 }
@@ -355,7 +359,7 @@ a.logo #CH_logo_title {
 /* line 45, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul li {
   color: inherit;
-  background-color: #fff;
+  background-color: #f8f8f8;
 }
 /* line 47, publicss/sass/_leftMenu.scss */
 #menu-content dl dd ul li:hover {
@@ -415,7 +419,7 @@ a.logo #CH_logo_title {
   padding: 6px;
   font-size: 14px;
   padding-left: 23px;
-  border-left: 3px solid #E8EBF2;
+  border-left: 3px solid #e0e0e0;
 }
 /* line 90, publicss/sass/_leftMenu.scss */
 #menu-content dl dt a {
@@ -437,7 +441,7 @@ a.logo #CH_logo_title {
 /* line 95, publicss/sass/_leftMenu.scss */
 #menu-content dl dt.sele_fir_menu, #menu-content dl dt:hover {
   color: #000;
-  background-color: #f2f2f2;
+  background-color: #efefef;
   border-color: #2299EE;
   font-weight: bold;
 }
