@@ -8,7 +8,7 @@
 // right-tab
 
 .tab-div {
-	@include set_size(100%,30px);
+	@include set_size(100%,31px);
 	@include float(right);
 	@include set_color($right-header-title,$right-header-bg-color);
 	li.active {
@@ -18,7 +18,7 @@
 	li{
 		@include border-radius(3px 3px 0 0);
 		margin-left:10px;
-		@include line-height(25px);
+		@include line-height(26px);
 		margin-top:5px;
 		a{
 			@include unstyled-link();
@@ -35,7 +35,7 @@
 }
 .right-content {
 	@include set_size(100%,680px);
-	@include stretch(30px);
+	@include stretch(31px);
 	@include float(right);
 	@include set_color(#000,#fff);
 	@include scroll();

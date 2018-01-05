@@ -48,12 +48,12 @@ table {
     @include set_color(#192027, #f2f2f2);
     @include set_font(13px);
 
-    padding-top: 2px;
+    padding:5px 0;
 }
 
 .add-panel-title {
     @include float(left);
-
+    margin-left: 10px;
     display: inline;
 
     img {
@@ -116,6 +116,7 @@ table {
 
         .add-panel-subtitle {
             text-indent: 15px;
+            padding:8px 0px;
             width: 15%;
             min-width: 140px;
             border-right: 1px solid #eeeeee;
@@ -124,34 +125,37 @@ table {
         .add-panel-section {
             width: 85%;
             text-indent: 0px;
-            padding: 0 5px;
+            padding: 5px 5px;
             input,textarea,select{
                 border:1px solid #c1c1c1;
+                padding:5px;
             }
         }
     }
 }
 
 .add-panel-form-text {
-    @include set_size(196px, 20px);
-
+    @include set_size(196px);
+    
     padding: 1px;
     text-indent: 1px;
 }
 .add-panel-form-select{
-    @include set_size(196px, 24px);
+    @include set_size(196px);
 }
 
 .add-panel-form-item {
     @include inline-block;
-
+    
     margin: 5px;
 }
-
+.add-panel-form-text,.add-panel-form-textarea{
+    font-family:$font-wryh;
+}
 .add-panel-footer {
     @include set_color(#fff, #f2f2f2);
 
-    padding: 4px 0;
+    padding: 8px 0;
     text-align: center;
 
     input {
@@ -160,7 +164,7 @@ table {
 
         min-width: 80px;
         margin: auto 20px;
-        padding: 4px 6px;
+        padding: 5px 6px;
         border: none;
     }
 }
@@ -168,7 +172,7 @@ table {
 .add-panel-form-button {
     @extend .imaged-button;
     min-width:70px;
-    height:24px;
+    // height:24px;
 }
 .add_panel_header_move{
     @include hover(move);
@@ -193,10 +197,10 @@ table {
     color: red;
 }
 .container-main-body-m {
-    max-height: 300px;
+    max-height: 300px!important;
 }
 .container-main-body-s {
-    max-height: 300px;
+    max-height: 300px!important;
 }
 .mesg-box-m {
     @include set_panel(50%,450px);

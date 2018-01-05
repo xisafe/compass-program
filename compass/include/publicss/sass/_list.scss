@@ -98,15 +98,26 @@
 .toolbar-paging-tools{
     @include set_color($right-header-title,$lp-table-thead-bg-color);
     .paging-tools{
+        margin-right:5px;
         img{
             margin:auto 8px;
             @include hover();
         }
         #first_page_icon_for_list_panel{
-                vertical-align: sub;
+            vertical-align: sub;
         }
         >span{
             margin:auto 6px;
+        }
+        .paging-text{
+            span{
+                margin:auto 2px;
+            }
+            #current_page_for_list_panel{
+                padding: 2px;
+                width: 44px;
+                margin: auto 6px;
+            }
         }
     }
 }

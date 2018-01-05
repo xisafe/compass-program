@@ -170,21 +170,35 @@
   color: #231915;
   background-color: #f2f2f2;
 }
-/* line 101, publicss/sass/_list.scss */
+/* line 100, publicss/sass/_list.scss */
+.toolbar-paging-tools .paging-tools {
+  margin-right: 5px;
+}
+/* line 102, publicss/sass/_list.scss */
 .toolbar-paging-tools .paging-tools img {
   margin: auto 8px;
   cursor: pointer;
 }
-/* line 105, publicss/sass/_list.scss */
+/* line 106, publicss/sass/_list.scss */
 .toolbar-paging-tools .paging-tools #first_page_icon_for_list_panel {
   vertical-align: sub;
 }
-/* line 108, publicss/sass/_list.scss */
+/* line 109, publicss/sass/_list.scss */
 .toolbar-paging-tools .paging-tools > span {
   margin: auto 6px;
 }
-
 /* line 113, publicss/sass/_list.scss */
+.toolbar-paging-tools .paging-tools .paging-text span {
+  margin: auto 2px;
+}
+/* line 116, publicss/sass/_list.scss */
+.toolbar-paging-tools .paging-tools .paging-text #current_page_for_list_panel {
+  padding: 2px;
+  width: 44px;
+  margin: auto 6px;
+}
+
+/* line 124, publicss/sass/_list.scss */
 .imaged-button, .add-panel-form-button {
   color: #fff;
   background-color: #5BC0DE;
@@ -197,13 +211,13 @@
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 121, publicss/sass/_list.scss */
+/* line 132, publicss/sass/_list.scss */
 .imaged-button img, .add-panel-form-button img {
   vertical-align: text-top;
   margin-right: 4px;
 }
 
-/* line 126, publicss/sass/_list.scss */
+/* line 137, publicss/sass/_list.scss */
 button {
   cursor: pointer;
   vertical-align: middle;
@@ -212,11 +226,11 @@ button {
   margin-left: 5px;
 }
 
-/* line 134, publicss/sass/_list.scss */
+/* line 145, publicss/sass/_list.scss */
 .search .search-item {
   margin-right: 5px;
 }
-/* line 136, publicss/sass/_list.scss */
+/* line 147, publicss/sass/_list.scss */
 .search .search-item .search-key-input {
   width: 196px;
   height: inherit;
@@ -224,44 +238,44 @@ button {
   font-size: 12px;
   vertical-align: middle;
 }
-/* line 144, publicss/sass/_list.scss */
+/* line 155, publicss/sass/_list.scss */
 .search .search-item .search-button .button-image {
   padding: 2px 0;
   width: 12px;
   height: 12px;
 }
-/* line 148, publicss/sass/_list.scss */
+/* line 159, publicss/sass/_list.scss */
 .search .search-item .search-button .button-text {
   height: 10px;
   font-size: 13px;
   margin-left: 3px;
 }
 
-/* line 157, publicss/sass/_list.scss */
+/* line 168, publicss/sass/_list.scss */
 .align-center {
   text-align: center !important;
   text-indent: 0 !important;
 }
 
-/* line 161, publicss/sass/_list.scss */
+/* line 172, publicss/sass/_list.scss */
 .rule-listbc {
   width: 50px;
   text-indent: 0px;
   text-align: center;
 }
 
-/* line 166, publicss/sass/_list.scss */
+/* line 177, publicss/sass/_list.scss */
 .action-image {
   margin: auto 5px;
 }
 
-/* line 170, publicss/sass/_list.scss */
+/* line 181, publicss/sass/_list.scss */
 .mesg-box-s {
   width: 40%;
   max-height: 370px;
 }
 
-/* line 174, publicss/sass/_list.scss */
+/* line 185, publicss/sass/_list.scss */
 .close-button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -276,17 +290,17 @@ button {
   border: none;
 }
 
-/* line 183, publicss/sass/_list.scss */
+/* line 194, publicss/sass/_list.scss */
 .background-hovered {
   background-color: powderblue !important;
 }
 
-/* line 186, publicss/sass/_list.scss */
+/* line 197, publicss/sass/_list.scss */
 .background-checked {
   background-color: antiquewhite !important;
 }
 
-/* line 190, publicss/sass/_list.scss */
+/* line 201, publicss/sass/_list.scss */
 .control_stretch_table {
   display: inline-block;
   height: 25px;
@@ -439,12 +453,13 @@ table {
   background-color: #f2f2f2;
   font-size: 13px;
   font-weight: bold;
-  padding-top: 2px;
+  padding: 5px 0;
 }
 
 /* line 54, publicss/sass/_add.scss */
 .add-panel-title {
   float: left;
+  margin-left: 10px;
   display: inline;
 }
 /* line 59, publicss/sass/_add.scss */
@@ -544,36 +559,38 @@ table {
 /* line 117, publicss/sass/_add.scss */
 .container-main-body tr .add-panel-subtitle {
   text-indent: 15px;
+  padding: 8px 0px;
   width: 15%;
   min-width: 140px;
   border-right: 1px solid #eeeeee;
 }
-/* line 124, publicss/sass/_add.scss */
+/* line 125, publicss/sass/_add.scss */
 .container-main-body tr .add-panel-section {
   width: 85%;
   text-indent: 0px;
-  padding: 0 5px;
+  padding: 5px 5px;
 }
-/* line 128, publicss/sass/_add.scss */
+/* line 129, publicss/sass/_add.scss */
 .container-main-body tr .add-panel-section input, .container-main-body tr .add-panel-section textarea, .container-main-body tr .add-panel-section select {
   border: 1px solid #c1c1c1;
+  padding: 5px;
 }
 
-/* line 135, publicss/sass/_add.scss */
+/* line 137, publicss/sass/_add.scss */
 .add-panel-form-text {
   width: 196px;
-  height: 20px;
+  height: inherit;
   padding: 1px;
   text-indent: 1px;
 }
 
-/* line 141, publicss/sass/_add.scss */
+/* line 143, publicss/sass/_add.scss */
 .add-panel-form-select {
   width: 196px;
-  height: 24px;
+  height: inherit;
 }
 
-/* line 145, publicss/sass/_add.scss */
+/* line 147, publicss/sass/_add.scss */
 .add-panel-form-item {
   display: inline-block;
   vertical-align: middle;
@@ -583,36 +600,40 @@ table {
   margin: 5px;
 }
 
-/* line 151, publicss/sass/_add.scss */
+/* line 152, publicss/sass/_add.scss */
+.add-panel-form-text, .add-panel-form-textarea {
+  font-family: "微软雅黑", sans-serif;
+}
+
+/* line 155, publicss/sass/_add.scss */
 .add-panel-footer {
   color: #fff;
   background-color: #f2f2f2;
-  padding: 4px 0;
+  padding: 8px 0;
   text-align: center;
 }
-/* line 157, publicss/sass/_add.scss */
+/* line 161, publicss/sass/_add.scss */
 .add-panel-footer input {
   color: #fff;
   background-color: #5BC0DE;
   cursor: pointer;
   min-width: 80px;
   margin: auto 20px;
-  padding: 4px 6px;
+  padding: 5px 6px;
   border: none;
 }
 
-/* line 168, publicss/sass/_add.scss */
+/* line 172, publicss/sass/_add.scss */
 .add-panel-form-button {
   min-width: 70px;
-  height: 24px;
 }
 
-/* line 173, publicss/sass/_add.scss */
+/* line 177, publicss/sass/_add.scss */
 .add_panel_header_move {
   cursor: move;
 }
 
-/* line 176, publicss/sass/_add.scss */
+/* line 180, publicss/sass/_add.scss */
 .waggle-swing {
   -moz-animation: wobble 1s 0.2s ease both;
   -webkit-animation: wobble 1s 0.2s ease both;
@@ -688,24 +709,24 @@ table {
     -webkit-transform: translateX(0%);
   }
 }
-/* line 190, publicss/sass/_add.scss */
+/* line 194, publicss/sass/_add.scss */
 .required-star {
   margin-left: 3px;
   vertical-align: middle;
   color: red;
 }
 
-/* line 195, publicss/sass/_add.scss */
+/* line 199, publicss/sass/_add.scss */
 .container-main-body-m {
-  max-height: 300px;
+  max-height: 300px !important;
 }
 
-/* line 198, publicss/sass/_add.scss */
+/* line 202, publicss/sass/_add.scss */
 .container-main-body-s {
-  max-height: 300px;
+  max-height: 300px !important;
 }
 
-/* line 201, publicss/sass/_add.scss */
+/* line 205, publicss/sass/_add.scss */
 .mesg-box-m {
   width: 50%;
 }
@@ -714,7 +735,7 @@ table {
   max-height: 450px;
 }
 
-/* line 204, publicss/sass/_add.scss */
+/* line 208, publicss/sass/_add.scss */
 .mesg-box-s {
   width: 40%;
 }
